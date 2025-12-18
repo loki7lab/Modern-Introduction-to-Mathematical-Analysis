@@ -1,0 +1,225 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+\section{实数系的连续性}
+
+
+关于实数系的连续性，有若干种相互等价的描述办法。
+本节将要介绍的“确界原理”，就是其中便于运用的一种陈述方式。
+通过在以后各章中的运用，读者将会逐渐加深对这一原理的理解。
+先来介绍有关的术语。
+
+\textbf{【上界与下界，有界集】}
+
+设$E \subset \mathbb{R}$，$E \neq \varnothing$。
+如果存在$L \in \mathbb{R}$（一个实数），使得  
+$$x \leq L, \forall x \in E,$$
+
+那么我们就说集合$E$有上界，并且说$L$是集合$E$的一个上界。
+如果存在$l \in \mathbb{R}$，使得  
+$$x \geq l, \forall x \in E,$$  
+那么我们就说集合$E$有下界，并且说$l$是集合$E$的一个下界。
+如果一个集合有上界并且也有下界，那么我们就说这集合有界，或者说这集合是有界集。
+
+如果$L$是集合$E$的上界，$L_1 > L$，
+那么$L_1$也是集合$E$的一个上界。
+因此，一个有上界的集合，不可能有最大的上界（因为总能找到更大$L_n$）。
+下面，我们来考察一个意义十分重大的问题：
+
+$\implies$ 非空而有上界的实数集合，是否总有一个最小的上界？
+
+
+\hl{这种“最小的上界”，通常称为上确界。}
+
+
+\textbf{【上确界】}
+
+设$E$是实数的非空集合，即设$E \subset \mathbb{R}$，$E \neq \varnothing$。
+如果存在一个实数$M$，满足下面的条件(i)和(ii)，那么我们就把$M$叫作集合$E$的上确界。
+条件(i)和(ii)分别是：
+
+(i) $M$是集合$E$的一个上界，即  
+$x \leq M, \forall x \in E;$  
+
+(ii) $M$是集合$E$的最小的上界：任何小于$M$的实数$M'$都不再是集合$E$的上界，即  
+$(\forall M' < M)(\exists x' \in E)(x' > M').$  
+
+上确界定义中的条件(ii)等价于说：集合$E$的任何上界$M_1 \geq M$。
+
+如果$M$和$M_1$都是集合$E$的上确界，那么就应该有  
+$M_1 \geq M, M \geq M_1,$  
+因而有  
+$M_1 = M,$  
+由此得知：集合$E$的上确界如果存在就必定只有一个。我们把这唯一的上确界记为$$\sup E.$$
+
+类似地可以定义下确界。
+
+\textbf{【下确界】}
+
+设$E \subset \mathbb{R}$，$E \neq \varnothing$。
+如果存在一个实数$m$，满足以下的条件(i)和(ii)，那么我们就把$m$叫作集合$E$的下确界：  
+
+(i) $m$是集合$E$的一个下界，即  
+$x \geq m, \forall x \in E;$  
+
+(ii) $m$是集合$E$的最大的下界：任何大于$m$的实数$m'$都不再是集合$E$的下界，即  
+$(\forall m' > m)(\exists x' \in E)(x' < m').$  
+
+集合$E$的下确界如果存在就必定是唯一的。我们把这唯一的下确界记为$$\inf E.$$
+
+
+设$E$是实数的非空集合。
+我们以$-E$表示$E$中各数的相反数组成的集合，即定义  
+$$-E = \{-x \mid x \in E\}.$$  
+
+请读者自己验证以下简单事项：  
+
+\begin{enumerate}
+  \item 集合$E$有上界（下界）的充要条件是集合$-E$有下界（上界）；
+  \item 集合$E$有上确界的充要条件是集合$-E$有下确界，并且$\sup E = -\inf(-E)$；
+  \item 集合$E$有下确界的充要条件是集合$-E$有上确界，并且$\inf E = -\sup(-E)$。
+\end{enumerate}
+
+证明示范：
+
+$(\forall x \in E)\leq M \iff \forall x \in E , -x \geq -M \iff \forall y \in -E ,y\geq -M\text{(令y=-x)} \iff -E\text{有下界且为}-M.$
+
+我们来介绍实数系的一个重要性质——\hl{连续性}。这一性质体现为以下的确界原理：  
+
+\textbf{【确界原理（第一种陈述）】}
+
+$\mathbb{R}$的任何非空而有上界的子集合$D$在$\mathbb{R}$中有上确界。  
+
+我们将证明与这陈述等价的另一陈述（即证明的是第二种陈述）：  
+
+\textbf{【确界原理（第二种陈述）】} 
+
+$\mathbb{R}$的任何一个非空并且有下界的子集合$E$在$\mathbb{R}$中有下确界。
+
+证明：
+在下面的讨论中，为了书写方便而作这样的约定：允许用记号\[\frac{1}{10^n}\]
+代表相应的有尽小数
+\[\underbrace{0.0\cdots 0}_\text{n个0}1  = \underbrace{0.0\cdots0}_\text{n个0}1000\cdots\]
+
+我们分两种情形讨论。
+
+\textbf{情形1：}  设0是集合$E$的一个下界。
+
+因为$E\neq \varnothing$，所以$\exists x\in E$。
+于是又$\exists k\in \mathbb{N}$，使得$k>x$。
+我们看到：0是$E$的一个下界，$k$不是$E$的下界。
+
+依次考察$0, 1, \dots, k-1$这些数，可以断定：
+存在$a_0\in \{0,1,\dots,k-1\}$，
+使得$a_0$是$E$的一个下界，而$a_0+1$不是$E$的下界。
+
+然后依次考察$a_0.0, a_0.1, \dots, a_0.9$这些数，
+又可断定：存在$a_1\in \{0,1,\dots,9\}$，
+使得$a_0.a_1$是$E$的一个下界，而$a_0.a_1+\frac{1}{10}$不是$E$的下界。
+
+再依次考察$a_0.a_{1}0,a_0.a_{1}1, \dots ,a_0.a_{1}9$这些数，又可断定：
+$\exists a_2\in \{0,1,\dots,9\}$，
+使得$a_0.a_1a_2$是$E$的一个下界，而$a_0.a_1a_2+\frac{1}{10^2}$不是$E$的下界。
+继续这样做下去，我们得到一串数：
+\begin{center}
+$a_0, a_0.a_1, a_0.a_1a_2, \dots, a_0.a_1a_2\cdots a_n,\cdots$
+\end{center}
+
+这些数满足条件：
+$a_0.a_1a_2\cdots a_n$是集合$E$的下界，
+而$a_0.a_1a_2\cdots a_{n}+\frac{1}{10^n}$不是集合$E$的下界。
+我们将证明：
+
+$a_0.a_1a_2\cdots a_n\cdots$是一个规范小数，它正好就是集合$E$的下确界。
+
+假如$a_0.a_1a_2\cdots a_n$不是规范小数，
+那么必定存在$p\in \mathbb{Z}^+$，使得
+\[a_p+1 = a_p + 2 = \dots = 9\]
+不妨设$p$是满足这个条件的最小的非负整数。
+对任意的$\beta\in E$
+，设$\beta$的规范小数表示为$\beta = \beta_0.\beta_1\beta_2\cdots$，
+则必定存在$n>p$，使得$\beta_n < 9$。因为\[\beta \geq a_0.a_1\cdots a_n\]，
+所以又必定存在$q \in \{0, 1, \dots, p\}$，使得
+
+\begin{center}
+
+$\beta_0 = a_0,\cdots ,\beta_{q-1} = a_{q-1},\beta_q \geq \alpha_q+1$
+\end{center}
+否则$\beta < a_0.a_1\cdots a_n$。于是有
+\begin{align*}
+\beta &\geq a_0.a_1\cdots a_{q-1}(a_q+1)\\
+        &\geq a_0.a_1\cdots a_{p-1}(a_p+1)\\
+        &=  a_0.a_1\cdots a_{p-1}(a_p)+\frac{1}{10^p}
+\end{align*}
+我们看到，
+\begin{center}
+$\beta \geq a_0.a_1\cdots a_p, \forall \beta \in E$
+\end{center}
+由$a_0.a_1\cdots$是非规范小数的假定导出的这一结论，与$a_p$的选择办法相矛盾。
+由此得知：$a_0.a_1\cdots a_n$必定是规范小数。\\
+
+下面，我们来证明实数$a = a_0.a_1a_2\cdots$是集合$E$的下确界。
+首先指出：$\forall \gamma \in E$必定满足
+\begin{center}
+$\gamma \geq a_0.a_1a_2\cdots .$
+\end{center}
+如果不是这样，就必定存在$h \in \mathbb{Z}^+$，
+使得
+\begin{center}
+$\gamma < a_0.a_1a_2\cdots a_h$
+\end{center}
+，这与$a_0.a_1a_2\cdots a_h$的选取方法矛盾。
+其次，对于任何一个$b > a_0.a_1a_2\cdots$，
+必定存在$k \in \mathbb{Z}^+$，使得
+\begin{center}
+$b \geq a_0.a_1a_2\cdots a_k+ \frac{1}{10^k}$
+\end{center}
+，这样的$b$不可能是集合$E$的下界。\\
+至此，对于0是$E$的下界的情形，我们证明了集合$E$在$\mathbb{R}$中必定有下确界。\\
+
+
+\textbf{情形2：} 设0不是集合$E$的下界。
+
+这就是说，$\exists x \in E$，使得
+\begin{center}
+$x < 0.$
+\end{center}
+于是，$E$的任何下界$l$必定小于0：
+\begin{center}
+$l < 0.$
+\end{center}
+我们来考察$\mathbb{R}$的另一非空子集合
+\begin{center}
+$F = \{-l \mid l \text{ 是 } E \text{ 的下界}\}$
+\end{center}
+。容易看出：0是集合$F$的一个下界。利用情形1中已经证明的结果，
+可以断定：$F$在$\mathbb{R}$中有下确界，即
+\begin{center}
+$\exists c = \inf F \in \mathbb{R}.$
+\end{center}
+我们指出：$a = -c$是集合$E$的下确界。\\
+为此，考察$\gamma \in E$。
+显然对任何$-l \in F$都有
+\begin{center}
+$\gamma \geq l$，$-\gamma \leq -l$
+\end{center}
+这说明$-\gamma$是集合$F$的一个下界。因而，
+\begin{center}
+$-\gamma \leq c$，$\gamma \geq -c = a$
+\end{center}
+。这说明$a = -c$是集合$E$的一个下界。
+另一方面，对于任意的$b > a$，我们有$-b < -a = c$，
+因此$-b \notin F$。
+这就是说，任何大于$a$的实数$b$都不是集合$E$的下界。
+我们证明了$a$是$E$的下确界。$\square$
+
+
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi

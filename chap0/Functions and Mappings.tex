@@ -1,0 +1,91 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside,utf8]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+
+
+\section{函数与映射}
+
+
+人们常说：“变量$y$随着变量$\alpha$的变化而变化”或者“变量$y$是变量$x$的函数”。这些说法的确切含义是什么呢？这就是说：变量$x$所取的任何一个确定的值，决定了变量$y$的唯一确定的值。或者说：对变量$x$的任何一个值，有变量$y$的唯一确定的值与之对应。采用集合论的术语对这些说法做进一步的概括，就得到映射的概念。
+
+设$D$和$E$都是集合。我们把$D$的元素与$E$的元素之间的对应关系$f$叫作一个映射，如果按照这对应关系，对集合$D$中的任何一个元素$\xi$，有集合$E$中唯一的一个元素$\eta$与之对应。$f$是从$D$到$E$的一个映射这件事，通常记为：
+
+
+\[ f: D \to E \]
+
+按照对应关系$f$，由$D$中的元素$\xi$所决定的$E$中的唯一元素$\eta$记为$f(\xi)$。有时候，我们用记号$\xi \mapsto \eta$表示元素之间的对应。例如，设$D = \mathbb{R}$，$E = \mathbb{R}$，而映射$f:D \to E$定义为$f(x) = x^2$，则这映射规定了元素之间这样的对应关系：
+
+
+\[ f: x \mapsto x^2 \]
+
+设$f:D \to E$是一个映射，$A \subset D$，$B \subset E$。我们把集合
+
+
+\[ f(A) = \{ f(x) \mid x \in A \} (\subset E) \]
+叫作集合$A$经过映射$f$的像集，并把集合
+
+
+\[ f^{-1}(B) = \{ x \mid f(x) \in B \} (\subset D) \]
+叫作集合$B$关于映射$f$的原像集。
+
+如果$D \subset \mathbb{R}$，$E = \mathbb{R}$，那么从$D$到$E$的映射就是通常的一元函数。但映射的概念远比这广泛。在以后的学习中，将会遇到更广泛的映射的例子。但在开始的时候，我们主要关心的是函数。
+
+\subsection*{例1：圆的面积函数}
+圆的面积$S$是半径$r$的函数：
+
+
+\[ S = \pi r^2 \]
+在这里，$D = \mathbb{R}^+$（正实数集），$E = \mathbb{R}$（实数集），对应关系由一个代数运算式来表示。
+
+
+\subsection*{例2：自由落体路程函数}
+自由落体经过的路程$s$是时间$t$的函数：\[ s = \frac{1}{2}gt^2 \]这里的函数关系也能用一个代数式来表示。
+
+\subsection*{例3：赫维赛德(Heaviside)函数}
+有一些函数关系具有“分段”的表达形式，例如在技术科学中有重要应用的赫维赛德(Heaviside)函数
+（又称单位阶跃函数）可以表示为：\[ H(t) = \begin{cases} 
+-1, & t < 0, \\
+0, & t = 0, \\
+1, & t > 0 
+\end{cases} \]
+
+\subsection*{例4：狄利克雷(Dirichlet)函数}
+狄利克雷(Dirichlet)函数定义如下：\[ D(t) = \begin{cases} 
+1, & t \text{ 是有理数}, \\
+0, & t \text{ 是无理数} 
+\end{cases} \]或用集合符号简化表示为：\[ D(t) = \begin{cases}1, & t \in \mathbb{Q}, \\0, & t \notin \mathbb{Q}\end{cases} \]
+
+\subsection*{例5：气压随时间变化的函数}
+在自动记录气压计中，有一个匀速转动的圆柱形记录鼓。印有坐标方格的记录纸就裹在这个鼓上。记录鼓每24小时转动一周。气压计指针的端点装有一支墨水笔，笔尖接触着记录纸。这样，经过24小时之后，取下的记录纸上就描画了一条曲线。这条曲线表示气压$p$随时间$t$变化的函数关系。
+
+\subsection*{例6：自然数编号实数序列}
+设$D = \mathbb{N}$（自然数集），$E = \mathbb{R}$（实数集）。一个映射\[ f: \mathbb{N} \to \mathbb{R} \]意味着用自然数编号的一串实数：\[ x_1 = f(1),\ x_2 = f(2),\ \cdots,\ x_n = f(n),\ \cdots \]这样的一个映射，或者说这样的以自然数编号的一串实数$\{x_n\}$，被称为实数序列。
+
+现在补充复合函数的定义。设$f: D \to E$是一个映射，$g: G \to H$也是一个映射。如果$f(D) \subset G$，那么从$\xi \in D$开始，相继经过$f$和$g$的作用，就得到$g(f(\xi))$。这样的对应关系\[ \xi \mapsto g(f(\xi)) \]也是一个映射。我们把这个映射称为$g$与$f$的复合，记为$g \circ f$。简言之，映射$g$与映射$f$的复合定义为\[ g \circ f: D \to H,\quad \xi \mapsto g(f(\xi)) \]
+
+
+\subsection*{例7：幂函数的复合}
+设$f:\mathbb{R} \to \mathbb{R}$定义为$f(x)=x^n$，则有：\[ f \circ f(x) = f(f(x)) = (x^n)^n = x^{n^2} \]
+
+\subsection*{例8：函数复合的顺序差异}
+考察函数$f(x)=x^2$和$g(x)=\sin x$，我们有：\[ g \circ f(x) = \sin(x^2),\quad f \circ g(x) = (\sin x)^2 = \sin^2 x \]
+
+一般说来，对于映射$f$和$g$，两种顺序的复合映射$g \circ f$和$f \circ g$不一定都有定义，即使有定义也不一定相同。让我们再看两个例子。
+
+\subsection*{例9：复合映射的定义域限制}
+考察函数$f(x)=\sqrt{1-x}$和$g(x)=x^2+10$。我们看到$g \circ f$对$x \leq 1$有定义而对$f \circ g$无定义。
+
+\subsection*{例10：复合映射的结果差异}
+考察函数$f(x)=x^2$和$g(x)=x+2$。这两者均在$\mathbb{R}$上有定义，
+因而\[ g \circ f(x) = (x^2) + 2 = x^2 + 2 \]\[ f \circ g(x) = (x+2)^2 = x^2 + 4x + 4 \]
+
+
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi

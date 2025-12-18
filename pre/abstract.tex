@@ -1,0 +1,25 @@
+% !TeX root = ./abstract.tex
+% pre/abstract.tex
+
+% A. If compiling this file alone, load the custom header
+\ifx\allfiles\undefined
+    \input{../config/custom.tex}
+\fi
+
+% B. Your Content
+\explanation{Abstract}
+
+Here is the text of the abstract12. 
+
+\begin{figure}[h]
+    \centering
+    % The \graphicspath in config.tex handles the folder location
+    \includegraphics[width=0.6\textwidth]{0.png}
+    \caption{Figure referenced from the figure folder}
+    \label{fig:abstract-0}
+\end{figure}
+
+% C. If compiling alone, end the document here
+\ifx\allfiles\undefined
+    \end{document}
+\fi

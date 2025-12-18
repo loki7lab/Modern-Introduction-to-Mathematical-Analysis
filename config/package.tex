@@ -1,0 +1,47 @@
+% config/package.tex 
+% 列出模板加载的包清单
+
+
+% 基础数学和工具
+\usepackage{amsmath} 
+\usepackage{amsthm} 
+\usepackage{amssymb}
+\usepackage{mathrsfs} 
+\usepackage{esint} 
+\usepackage{yhmath} 
+\usepackage{extarrows}
+\usepackage{indentfirst}
+
+% 颜色 (XColor 必须在 hyperref 之前)
+\usepackage[dvipsnames, svgnames]{xcolor}
+\usepackage[svgnames]{xcolor}
+\usepackage{ulem} % 替代 soul
+
+
+
+% 字体设置（fontspec 应该在 CJK 字体设置之前）
+\usepackage{fontspec} 
+\setCJKmainfont{Songti SC} 
+\setmonofont{Courier New}
+\setmainfont{Times New Roman}
+
+
+% 布局和样式
+\usepackage{geometry}
+\usepackage{graphicx} 
+\usepackage{fancyhdr} 
+\usepackage{enumitem}
+\usepackage[strict]{changepage} 
+\usepackage{framed} 
+\usepackage{listings}
+% listings 依赖 xcolor，顺序没问题
+
+\usepackage{setspace}  
+\usepackage{microtype} 
+\usepackage{titlesec}  
+
+% 目录定制 (tocloft 必须在 hyperref 之前)
+\usepackage{tocloft} 
+
+% 超链接 (hyperref 必须是最后一个主要的宏包)
+\usepackage{hyperref}

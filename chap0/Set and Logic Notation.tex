@@ -1,0 +1,146 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside,utf8]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+\part{预篇\\预备知识} % 无编号的章标题
+
+本篇为课程的学习做准备，
+先介绍一些在数学中广泛采用的术语和记号，
+然后介绍几个启发微积分基本概念的典型问题。
+
+\section{集合与逻辑记号}
+
+集合这一概念描述如下：
+
+\textbf{一个集合是由确定的一些对象汇集的总体}。
+组成集合的这些对象被称为集合的\textbf{元素}。
+
+$x$ 是集合 $E$ 的元素这件事用记号表示为：
+\begin{center}
+$x \in E$ \quad (读作：$x$ 属于 $E$)
+\end{center}
+
+$y$ 不是集合 $E$ 的元素这件事记为：
+\begin{center}
+$y \notin E$ \quad (读作：$y$ 不属于 $E$)
+\end{center}
+
+如果集合 $E$ 的任何元素都是集合 $F$ 的元素，
+那么我们就说 $E$ 是 $F$ 的\textbf{子集合}，记为：
+\begin{center}
+$E \subset F$ \quad (读作：$E$ 包含于 $F$) 
+\end{center}
+\text{或} 
+\begin{center}
+$F \supset E$ \quad (读作：$F$ 包含 $E$)
+\end{center}
+
+有些作者用符号“$\subset$”表示“真包含”关系，
+但在现代数学文献中广泛采用的是另一种约定：“$\subset$”表示一般的包含关系（不限于真包含）。
+本书采用后一种约定。这样约定之后，当需要表示“真包含”关系时，反而要用稍累赘的记号“$\subsetneq$”，
+但毕竟需要这样做的情形是很少的，没有带来多少不方便。
+
+如果集合 $E$ 的任何元素都是集合 $F$ 的元素，
+并且集合 $F$ 的任何元素也都是集合 $E$ 的元素
+（即 $E \subset F$ 并且 $F \subset E$），
+那么我们就说集合 $E$ 与集合 $F$ \textbf{相等}，记为：
+\begin{center}
+$E = F$
+\end{center}
+
+为了方便起见，我们引入一个不含任何元素的集合——\textbf{空集合} $\varnothing$。
+我们还约定：空集合是任何集合 $E$ 的子集合，即：
+\begin{center}
+$\varnothing \subset E$
+\end{center}
+
+全体自然数的集合、
+全体整数的集合、
+全体有理数的集合、
+全体实数的集合和
+全体复数的集合都是最常遇到的集合。
+我们约定分别用以下记号表示：
+\begin{itemize}
+    \item $\mathbb{N}$表示全体自然数的集合；
+    \item $\mathbb{Z}$表示全体整数的集合；
+    \item $\mathbb{Q}$表示全体有理数的集合；
+    \item $\mathbb{R}$表示全体实数的集合；
+    \item $\mathbb{C}$表示全体复数的集合。
+\end{itemize}
+
+本书中，全体自然数的集合 \(\mathbb{N}\)不包含 \(0\)（也不包括负数）。
+我们还把非负整数、非负有理数和非负实数的集合分别记为 \(\mathbb{Z}^+\)、\(\mathbb{Q}^+\) 和 \(\mathbb{R}^+\)。显然有：
+\[
+\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+\] 
+\text{和}
+\[ 
+\mathbb{N} \subset \mathbb{Z}^+ \subset \mathbb{Q}^+ \subset \mathbb{R}^+ \subset \mathbb{C}.
+\]
+
+集合可以通过罗列其元素或者指出其元素应满足的条件等办法来给出。例如：
+\[
+\{1,2,3,4,5\}
+\]
+表示由 \(1,2,3,4,5\) 这五个数字组成的集合，而
+\[
+\{x \in \mathbb{R} \mid x>3\}
+\]
+表示由大于 \(3\) 的实数组成的集合。又如：\(2\) 的平方根的集合可以记为
+\[
+\{x \in \mathbb{R} \mid x^2=2\}
+\quad \text{或} \quad 
+\{ -\sqrt{2}, \sqrt{2} \}.
+\]
+
+在本课程中经常要遇到以下形式的实数集的子集：
+\begin{itemize}
+\item 闭区间 \([a,b] = \{x \in \mathbb{R} \mid a \leq x \leq b\}\);
+\item 开区间 \((a,b) = \{x \in \mathbb{R} \mid a < x < b\}\);
+\item 左闭右开区间 \([a,b) = \{x \in \mathbb{R} \mid a \leq x < b\}\);
+\item 左开右闭区间 \((a,b] = \{x \in \mathbb{R} \mid a < x \leq b\}\).
+\end{itemize}
+这里 \(a, b \in \mathbb{R}\), \(a < b\).
+
+设 \(E\) 和 \(F\) 是任意两个集合。
+由 \(E\) 的所有元素与 \(F\) 的所有元素合在一起组成的集合称为这两个集合的\textbf{并集}，记为 \(E \cup F\).
+由 \(E\) 和 \(F\) 共同的元素组成的集合称为这两个集合的\textbf{交集}，记为 \(E \cap F\).
+由属于 \(E\) 但不属于 \(F\) 的元素组成的集合称为这两个集合的\textbf{差集}，记为 \(E \setminus F\).
+
+
+以下介绍几个逻辑符号。设 \(\alpha\) 和 \(\beta\) 是两个判断。
+如果当 \(\alpha\) 成立时，\(\beta\) 也一定成立，
+我们就说 \(\alpha\) 能够推出 \(\beta\)，
+或者 \(\alpha\) 蕴涵 \(\beta\)，记为
+ \[\alpha \implies \beta\]。
+例如：\[x \in \mathbb{R} \to x^2 \geq 0\]。
+    
+如果 \(\alpha \implies \beta\) 并且 \(\beta \implies \alpha\)，
+我们就说 \(\alpha\) 与 \(\beta\) 等价，
+或者说 \(\alpha\) 与 \(\beta\) 互为充要条件，
+记为 \(\alpha \iff \beta\)。
+例如，对于 \(x \in \mathbb{R}\)，我们有 
+\[x > 0 \iff \frac{1}{x} > 0\]。
+
+
+设 \(\alpha(x)\) 是涉及 \(x \in E\) 的一个判断。
+我们用记号 \[(\exists x \in E)(\alpha(x))\]
+或者 \[\exists x \in E: \alpha(x)\]
+表示"存在 \(x \in E\) 使得 \(\alpha(x)\) 成立"。\\
+
+例如：\(\exists n \in \mathbb{N}: n^2 - 4n + 4 > 0\)。
+
+设 \(\beta(x)\) 是涉及 \(x \in E\) 的一个判断。
+我们用记号 \[(\forall x \in E)(\beta(x))\]
+或者 \[\beta(x),\ \forall x \in E\]
+表示"对一切 \(x \in E\) 都有 \(\beta(x)\) 成立"。\\
+例如：\[(\forall x \in \mathbb{R})(x^2 \geq 0)\]
+或者 \[x^2 \geq 0,\ \forall x \in \mathbb{R}\]
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi

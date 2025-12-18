@@ -1,0 +1,35 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside,utf8]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+\explanation{前言}
+...
+
+Example 12
+
+\[
+    \frac{a}{b} = c
+\]
+
+Example 2
+
+\[
+    \frac{a}{b} = c
+\]
+
+
+\begin{figure}[h]
+    \centering
+    % The \graphicspath in config.tex handles the folder location
+    \includegraphics[width=0.6\textwidth]{0.png}
+    \caption{Figure referenced from the figure folder}
+    \label{fig:abstract-0}
+\end{figure}
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi

@@ -1,0 +1,181 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside,utf8]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+\section{面积、路程与功的计算}
+
+
+我们已经会求直线图形和圆的面积。为了计算更一般的曲线图形的面积，需要寻求更有效的方法。
+
+先来看一个具体的例子。设有这样一个曲线图形，它由曲线 $y=x^p$，
+$OX$ 轴和直线 $x=b$ 围成，我们来求它的面积（图 0-1）。
+
+\begin{figure}[h]
+    \centering
+    % The \graphicspath in config.tex handles the folder location
+    \includegraphics[width=0.6\textwidth]{0_1.jpg}
+    \caption{非负的曲面面积计算}
+    \label{fig:0_1}
+\end{figure}
+
+
+我们把 $OX$ 轴上的闭区间 $[0, b]$ 分成 $n$ 等分，
+其中第 $k$ 个等分是 
+\[\left[ \dfrac{(k-1)b}{n}, \dfrac{kb}{n} \right].\]
+
+相应地把上述曲线图形分成 $n$ 个等宽的条形：
+\[
+\frac{k-1}{n}b \leq x \leq \frac{k}{n}b, \quad 0 \leq y \leq x^p, \quad k=1,2,\cdots,n.
+\]
+
+
+每一条形的面积 $S_k$ 介于二矩形条的面积之间：
+\[
+\left( \frac{(k-1)b}{n} \right)^p \cdot \frac{b}{n}
+ \leq S_k 
+ \leq \left( \frac{kb}{n} \right)^2  \cdot \frac{b}{n}.
+\]
+
+因而所求的曲线图形的面积 $S$ 应该介于以下两个和数之间：
+\[
+\sum_{k=1}^n \left( \dfrac{(k-1)}{n}b \right)^p \cdot
+ \dfrac{b}{n} \leq S \leq 
+ \sum_{k=1}^n \left( \dfrac{k}{n}b \right)^p \cdot \dfrac{b}{n}.
+\]
+
+我们可以把矩形条面积之和当作曲线图形面积 $S$ 的近似值。所分成的矩形条越细，
+这样的近似值的精确度就越高。事实上，分别处理两个和数，我们有
+\begin{align*}
+\sum_{k=1}^{n} \left( \dfrac{k}{n}b \right)^p \cdot \dfrac{b}{n} 
+&= \dfrac{b^{p+1}}{n^{p+1}} \sum_{k=1}^n k^p \\
+&= \dfrac{b^{p+1}}{n^{p+1}} \left( \dfrac{1}{p+1}n^{p+1} + c_1 n^p + \cdots + c_p n \right)\\
+&= b^{p+1} \left( \dfrac{1}{p+1} + \dfrac{c_1}{n} + \cdots + \dfrac{c_p}{n^p}
+\right).
+\end{align*}
+
+
+\begin{align*}
+\sum_{k=1}^{n} \left( \dfrac{k-1}{n}b \right)^p \cdot \dfrac{b}{n} 
+&= \sum_{k=1}^{n}\left(\dfrac{k}{n}b \right)^p \cdot \dfrac{b}{n}-\dfrac{b^{p+1}}{n}\\
+&= b^{p+1}\left(\dfrac{1}{p+1}+\dfrac{c_1 - 1}{n}+\cdots +\dfrac{c_p}{n^p}\right).
+\end{align*}
+
+当 $n$ 无限增大时，上面两个和数趋于共同的极限值 $\dfrac{b^{p+1}}{p+1}$，
+这共同的极限值应该看作所求的面积 $S$。这样，我们求得
+\[
+S = \dfrac{b^{p+1}}{p+1}.
+\]
+
+再来看一般的情形。设函数 $y=f(x)$ 在闭区间 $[a,b]$ 上有定义并且非负
+（即只取大于或等于 $0$ 的值）。
+曲线 $y=f(x)$ 与直线 $x=a,\ x=b,\ y=0$ 围成一个图形，我们来求这个曲线图形的面积 $S$。
+为此，用一串分点
+\[
+a = x_0 < x_1 < \cdots < x_n = b
+\]
+把闭区间 $[a,b]$ 分成 $n$ 段，相应地把上述曲线图形分成 $n$ 个条形，
+其中第 $j$ 个条形为 $x_{j-1} \leq x \leq x_j,\ 0 \leq y \leq f(x)$。
+
+在闭区间 $[x_{j-1}, x_j]$ 上任取一点$\xi_j$，我们把高为 $f(\xi_j)$，
+底长为 $\Delta x_j = x_j - x_{j-1}$ 的矩形条的面积，
+当作曲线图形的第 $j$ 个条形的面积的近似值。这样得到曲线图形面积的近似值
+\[
+\sum_{j=1}^n f(\xi_j) \Delta x_j.
+\]
+
+以后将证明，对于相当普遍的函数 $f$，当分割的条形越来越窄时，上述和式有确定的极限。
+这极限应当视为所求曲线图形的面积。
+
+我们还可以讨论更一般的情形。设 $y=f(x)$ 是在闭区间 $[a,b]$ 上有定义的函数（不一定非负），
+考察由直线 $x=a,\ x=b,\ y=0$ 与曲线 $y=f(x)$ 所围图形的面积。
+
+\begin{figure}[h]
+    \centering
+    % The \graphicspath in config.tex handles the folder location
+    \includegraphics[width=0.6\textwidth]{0_2.jpg}
+    \caption{一般性的曲面面积计算}
+    \label{fig:0_2}
+\end{figure}
+
+我们约定，对于函数 $f$ 取负值的部分，曲线 $y=f(x)$ 与 $OX$ 轴所夹的面积为负值（图 0-2）。
+这样，我们仍能把所述图形的面积的近似值表示为
+
+
+
+\[
+\sum_{j=1}^n f(\xi_j) \Delta x_j.
+\]
+
+
+对于相当普遍的函数 $f$，当分割的条形越来越窄时，上述和式有确定的极限。这极限应当视为所述曲线图形的面积的代数值。
+
+再来看一些取自物理学的例子。
+
+设物体做变速直线运动，其速度 $v$ 是时间 $t$ 的函数 $v=f(t)$。
+我们来计算这个物体从时刻 $a$ 到时刻 $b$ 经过的路程。为此，用一串分点
+\[
+a = t_0 < t_1 < \cdots < t_n = b
+\]
+把这段时间分成 $n$ 小段。在第 $j$ 段时间中物体通过的路程可以认为近似等于
+\[
+f(\tau_j) \Delta t_j,
+\]
+这里 $\tau_j$ 是 $[t_{j-1}, t_j]$ 中的一个时刻（作为这个小段的代表速度），
+$\Delta t_j = t_j - t_{j-1}$。于是，从时刻 $a$ 到时刻 $b$ 物体通过的路程近似等于
+\[
+\sum_{j=1}^n f(\tau_j) \Delta t_j.
+\]
+当所分割的时间间隔越来越短时，上述和式的极限值即为物体从时刻 $a$ 到时刻 $b$ 通过的路程。
+
+另一取自物理学的问题是求变力所做的功。设物体 $m$ 受到一个沿 $OX$ 轴方向的力 $F$ 的作用，
+它沿这个轴从 $a$ 点运动到 $b$ 点。如果力 $F$ 随着 $x$ 而改变，即 $$F = f(x)$$，
+我们来求 $F$ 对这物体 $m$ 所做的功。为此，在 $a$ 和 $b$ 之间插入一串分点
+\[
+a = x_0 < x_1 < \cdots < x_n = b.
+\]
+设 $\xi_j$ 是 $[x_{j-1}, x_j]$ 上任意一点，而 $\Delta x_j = x_j - x_{j-1}$。
+在路程 $[x_{j-1}, x_j]$ 上把力 $F=f(x)$ 近似地看成常力 $f(\xi_j)$，
+则在这段上力 $F$ 所做的功近似地等于
+\[
+f(\xi_j) \Delta x_j.
+\]
+变力 $F=f(x)$ 在整段路程 $[a,b]$ 上所做的功近似地等于
+\[
+\sum_{j=1}^n f(\xi_j) \Delta x_j.
+\]
+当所分割的路程间隔越来越小时，上述和式的极限值即为变力 $F=f(x)$ 所做的功 $W$。
+
+在上面列举的例子中，来源不同的几个问题都可以用类似的方法讨论。还可以举出更多的例子，所涉及的问题归结为如下形式的和数的极限
+\[
+\sum_{j=1}^n f(\xi_j) \Delta x_j.
+\]
+当分割无限加细的时候，上述和数的极限值称为函数 $f(x)$ 的积分，记为
+\[
+\int_a^b f(x) \, dx,
+\]
+其中 $a,b$ 表示和数展布的区间，积分号 $\int$（拉长了的 $S$）表示求和求极限的过程，
+而 $f(x)\,dx$ 表示求和各项的形状。
+如果把 $\Delta x_1, \Delta x_2,\dots, \Delta x_n$ 中最大的一个记为
+\[
+\max \Delta x_j,
+\]
+那么我们就可以写
+\[
+\int_a^b f(x) \, dx = \lim_{\max \Delta x_j \to 0} \sum_{j=1}^n f(\xi_j) \Delta x_j.
+\]
+
+早在公元前 3 世纪，古希腊时代的著名学者阿基米德（Archimedes）就已经会计算曲线图形
+\[
+0 \leq x \leq b, \quad 0 \leq y \leq x^2
+\]
+的面积。但他的方法（所谓“穷竭法”）陈述起来并不那么简单清楚，所以在很长的一段时间里没有被人们普遍接受。直到两千年以后，牛顿（Newton）和莱布尼茨（Leibniz）创立了微积分学，特别是把积分的计算与微分联系起来，人们才有了统一地解决多种多样的问题的简单而有效的工具。
+
+
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi

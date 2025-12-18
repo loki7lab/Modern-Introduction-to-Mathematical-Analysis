@@ -1,0 +1,29 @@
+% main.tex
+% 虽然是双重编译，但只编译子文件是无法修改主文件的编译结果的
+% 定义主文件
+\def\allfiles{} 
+
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+
+%\def\path{./config}
+\input{config/config.tex} % 此处加载 config/package.tex (包含 hyperref)
+
+% 确保所有宏包已加载完毕
+
+\begin{document}
+
+\tableofcontents % 目录
+\listoffigures  % 图目录
+\listoftables   % 表目录
+
+\include{pre/pre.tex}
+
+\clearpage
+\pagenumbering{arabic}
+
+% 解决 PDF 书签换行报错
+\part{\texorpdfstring{Preparatory Chapter\\Background Knowledge}{Preparatory Chapter Background Knowledge}}
+
+\include{chap1/chap.tex}
+
+\end{document}

@@ -1,0 +1,23 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside,utf8]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+
+\section{实数}
+
+微积分创始于17世纪后半期。创立微积分的大师们着眼于发展强有力的方法。
+他们虽然解决了许多过去认为高不可攀的困难问题，却未能为自己的方法提供逻辑上无懈可击的理论说明。
+这引起了人们长达一个多世纪的争论与误解。
+直到19世纪初，柯西(Cauchy)才以极限理论为微积分奠定了坚实的基础。
+又过了半个世纪以后，康托尔(Cantor)和戴德金(Dedekind)等人经过缜密的审查才发现：
+极限理论的某些基本原理，实际上依赖于实数系的一个非常重要的性质——连续性。
+本章的重点是实数系的连续性。希望读者能紧紧抓住问题的关键，领会精神而不过分拘泥于细节。
+
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi

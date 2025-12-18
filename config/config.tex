@@ -1,0 +1,86 @@
+% -------------------------- 1. 路径与外部配置 --------------------------
+% 定义基础路径变量（未提前定义则默认当前目录）
+\ifx\basepath\undefined
+    \newcommand{\basepath}{./}
+\fi
+% 引入外部宏包配置文件（按基础路径拼接）
+\input{\basepath config/package.tex}
+% 设置图片文件根路径（基础路径下的figure文件夹）
+\graphicspath{{\basepath figure/}}
+
+
+% -------------------------- 2. 页面尺寸与边距 --------------------------
+\geometry{ 
+    papersize={210mm,285mm}, % 页面尺寸（接近A4，略短）
+    left=22mm, right=22mm,   % 左右边距
+    top=28mm, bottom=28mm,   % 上下边距
+    headheight=14pt, headsep=20pt % 页眉高度与间距
+}
+
+
+% -------------------------- 3. 章节标题样式 --------------------------
+% 部分（Part）标题：新页+居中+特大号加粗
+\titleformat{\part}{\newpage\centering\Huge\bfseries}{}{0em}{}
+\titlespacing*{\part}{0pt}{0ex}{3.0ex} % 部分标题间距
+
+% 章节（Chapter）标题：居中+大号加粗+带章节号
+\titleformat{\chapter}{\centering\Large\bfseries}{\thechapter.}{1em}{}
+\titlespacing*{\chapter}{0pt}{3.0ex}{2.0ex} % 章节标题间距
+
+% 小节（Section）标题：大号加粗+带§符号
+\titleformat{\section}{\centering\large\bfseries}{§\arabic{section}}{0.8em}{}
+\titlespacing*{\section}{0pt}{2.5ex}{1.5ex} % 小节标题间距
+
+% 自定义未编号章节（Explanation）：封装chapter*，复用其样式
+\newcommand{\explanation}[1]{\chapter*{#1}}
+
+
+
+% -------------------------- 4. 段落与列表格式 --------------------------
+\parindent=2em % 段落首行缩进2字符
+
+% 有序/无序/描述列表统一格式：调整间距
+\setenumerate[1]{itemsep=5pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
+\setitemize[1]{itemsep=5pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
+\setdescription{itemsep=5pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
+
+% 重新定义 \hl 命令
+\definecolor{lightpink}{rgb}{1.0, 0.71, 0.76}
+\newcommand{\hl}[1]{%
+  \bgroup
+  \markoverwith{\textcolor{lightpink}{\rule[-.5ex]{2pt}{2.5ex}}}%
+  \ULon{#1}%
+}
+
+
+% -------------------------- 5. 页眉页脚配置 --------------------------
+% -------------------------- 5. 页眉页脚配置 --------------------------
+\setlength{\headheight}{15pt} % 解决 headheight too small 警告
+\pagestyle{fancy} % 使用fancy样式
+\fancyhf{} % 清空默认内容
+\fancyhead[L]{\leftmark} % 左页眉：当前章节标题
+\fancyhead[R]{\thepage} % 右页眉：页码
+\renewcommand{\headrulewidth}{0.4pt} % 页眉下边框线宽
+\renewcommand{\footrulewidth}{0pt} % 隐藏页脚下边框
+
+
+% -------------------------- 6. 代码块样式（分语言定义） --------------------------
+% 定义Mathematica代码样式（避免全局覆盖）
+\lstdefinestyle{MathematicaStyle}{
+    language=Mathematica, basicstyle=\tt, breaklines=true,
+    keywordstyle=\bfseries\color{NavyBlue}, emphstyle=\bfseries\color{Rhodamine},
+    commentstyle=\itshape\color{black!50!white}, stringstyle=\bfseries\color{PineGreen!90!black},
+    columns=flexible, numbers=left, numberstyle=\footnotesize, frame=tb, breakatwhitespace=false
+}
+
+% 定义TeX代码样式（避免全局覆盖）
+\lstdefinestyle{TeXStyle}{
+    language=TeX, basicstyle=\ttfamily, breaklines=true,
+    keywordstyle=\bfseries\color{NavyBlue}, emphstyle=\bfseries\color{Rhodamine},
+    commentstyle=\itshape\color{black!50!white}, stringstyle=\bfseries\color{PineGreen!90!black},
+    columns=flexible, numbers=left, numberstyle=\footnotesize, frame=tb, breakatwhitespace=false
+}
+
+
+% 可选：设置全局默认代码样式（按需启用）
+% \lstset{style=MathematicaStyle}
