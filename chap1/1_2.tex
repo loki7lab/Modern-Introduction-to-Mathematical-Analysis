@@ -133,37 +133,42 @@ $a_0, a_0.a_1, a_0.a_1a_2, \dots, a_0.a_1a_2\cdots a_n,\cdots$
 这些数满足条件：
 $a_0.a_1a_2\cdots a_n$是集合$E$的下界，
 而$a_0.a_1a_2\cdots a_{n}+\frac{1}{10^n}$不是集合$E$的下界。
-我们将证明：
 
-$a_0.a_1a_2\cdots a_n\cdots$是一个规范小数，它正好就是集合$E$的下确界。
+$\implies$ 现在需要证明的问题转变为：这样找出的$a_0.a_1a_2\cdots a_n\cdots$
+是一个规范小数，且它正好就是集合$E$的下确界。
 
-假如$a_0.a_1a_2\cdots a_n$不是规范小数，
+首先证明它是规范小数。使用反证法，假如$a_0.a_1a_2\cdots a_n$不是规范小数，
 那么必定存在$p\in \mathbb{Z}^+$，使得
 \[a_p+1 = a_p + 2 = \dots = 9\]
-不妨设$p$是满足这个条件的最小的非负整数。
+不妨设$p$是满足这个条件的最小的非负整数（从第$p+1$位开始，全是9）。
 对任意的$\beta\in E$
 ，设$\beta$的规范小数表示为$\beta = \beta_0.\beta_1\beta_2\cdots$，
-则必定存在$n>p$，使得$\beta_n < 9$。因为\[\beta \geq a_0.a_1\cdots a_n\]，
-所以又必定存在$q \in \{0, 1, \dots, p\}$，使得
+则必定存在$n>p$，使得$\beta_n < 9$（描述的是：因为$p<n$，所以此时$\alpha$的第$n$位是9，
+$\beta$的第$n$位小于9）。
+又因为上面的找法是找下界，因此\[\beta \geq a_0.a_1\cdots a_n\]，
+也就是必定存在$q \in \{0, 1, \dots, p\}$，使得
 
 \begin{center}
 
 $\beta_0 = a_0,\cdots ,\beta_{q-1} = a_{q-1},\beta_q \geq \alpha_q+1$
 \end{center}
-否则$\beta < a_0.a_1\cdots a_n$。于是有
+否则从第$p+1$位开始就没有希望比赢大小了。于是有
 \begin{align*}
 \beta &\geq a_0.a_1\cdots a_{q-1}(a_q+1)\\
-        &\geq a_0.a_1\cdots a_{p-1}(a_p+1)\\
-        &=  a_0.a_1\cdots a_{p-1}(a_p)+\frac{1}{10^p}
+        &\geq a_0.a_1\cdots a_{p-1}(a_p+1) \text{（这里是把位数往后放宽）}\\
+        &=  a_0.a_1\cdots a_{p-1}a_p+\frac{1}{10^p}
 \end{align*}
 我们看到，
 \begin{center}
-$\beta \geq a_0.a_1\cdots a_p, \forall \beta \in E$
+$\beta \geq a_0.a_1\cdots a_p + \frac{1}{10^p}, \forall \beta \in E$
 \end{center}
-由$a_0.a_1\cdots$是非规范小数的假定导出的这一结论，与$a_p$的选择办法相矛盾。
+
+由$a_0.a_1\cdots$是非规范小数的假定，
+导出$a_0.a_1\cdots a_p + \frac{1}{10^p}$也是下界，
+而这与前面的选择办法相矛盾。
 由此得知：$a_0.a_1\cdots a_n$必定是规范小数。\\
 
-下面，我们来证明实数$a = a_0.a_1a_2\cdots$是集合$E$的下确界。
+现在我们来证明这样找出的实数$a = a_0.a_1a_2\cdots$是集合$E$的下确界。
 首先指出：$\forall \gamma \in E$必定满足
 \begin{center}
 $\gamma \geq a_0.a_1a_2\cdots .$
@@ -177,17 +182,19 @@ $\gamma < a_0.a_1a_2\cdots a_h$
 其次，对于任何一个$b > a_0.a_1a_2\cdots$，
 必定存在$k \in \mathbb{Z}^+$，使得
 \begin{center}
-$b \geq a_0.a_1a_2\cdots a_k+ \frac{1}{10^k}$
+$b \geq a_0.a_1a_2\cdots a_k+ \frac{1}{10^k}.$
 \end{center}
-，这样的$b$不可能是集合$E$的下界。\\
+
+也就是哪怕$b$只要比前面算法找到的大一点，也会导致$a_0.a_1a_2\cdots a_k+ \frac{1}{10^k}$成为下界，
+因此$b$不可能是集合$E$的下界。
 至此，对于0是$E$的下界的情形，我们证明了集合$E$在$\mathbb{R}$中必定有下确界。\\
 
 
 \textbf{情形2：} 设0不是集合$E$的下界。
 
-这就是说，$\exists x \in E$，使得
+这就是说，
 \begin{center}
-$x < 0.$
+$\exists x \in E \text{ such that } x < 0.$
 \end{center}
 于是，$E$的任何下界$l$必定小于0：
 \begin{center}
