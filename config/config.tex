@@ -46,12 +46,20 @@
 
 % 重新定义 \hl 命令
 \definecolor{lightpink}{rgb}{1.0, 0.71, 0.76}
-\newcommand{\hl}[1]{%
+\definecolor{lettucegreen}{rgb}{0.75, 0.83, 0.56}
+
+\newcommand{\hlpink}[1]{%
   \bgroup
   \markoverwith{\textcolor{lightpink}{\rule[-.5ex]{2pt}{2.5ex}}}%
   \ULon{#1}%
 }
 
+
+\newcommand{\hlgreen}[1]{%
+  \bgroup
+  \markoverwith{\textcolor{lettucegreen}{\rule[-.5ex]{2pt}{2.5ex}}}%
+  \ULon{#1}%
+}
 
 % -------------------------- 5. 页眉页脚配置 --------------------------
 % -------------------------- 5. 页眉页脚配置 --------------------------

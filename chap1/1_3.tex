@@ -1,0 +1,487 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside,utf8]{ctexbook}
+    \def\basepath{../}%basepath =  ^{'} ../config^{'} 
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+\section{实数的四则运算}
+
+两个实数的和、差、积、商是什么意思？这是需要予以确切定义的。
+为了定义实数 $a$ 与 $b$ 之和，我们考察满足以下条件的有尽小数
+$\alpha, \alpha^{'}  $ 与 $\beta, \beta^{'}  $：
+\[
+\alpha \le a \le \alpha^{'}  , \qquad \beta \le b \le \beta^{'}  .
+\]
+两实数 $a$ 与 $b$ 之和 $a+b$ 的合理定义应该满足
+\[
+\alpha+\beta \le a+b \le \alpha^{'}  +\beta^{'}  .
+\]
+上式中的 $\alpha+\beta$ 和 $\alpha^{'}  +\beta^{'}  $ 都只涉及有尽小数的加法运算，
+因而是已经有定义的。我们将利用已有定义的有尽小数的运算来定义实数的相应运算。
+（接下来请注意区分定理，引理的关系。）
+
+\medskip
+
+\hlpink{\textbf{定理 1}}\quad
+设 $a$ 和 $b$ 是实数（不要求有尽），则存在唯一实数 $u$（不要求有尽），使得对于满足条件
+\[
+\alpha \le a \le \alpha^{'}  , \qquad \beta \le b \le \beta^{'}  
+\]
+的\hlgreen{任何有尽小数} $\alpha, \alpha^{'}  $ 和 $\beta, \beta^{'}  $，都有
+\[
+\alpha+\beta \le u \le \alpha^{'}  +\beta^{'}  .
+\]
+
+证明这样的实数$u$存在比较容易。事实上，实数
+
+\[
+u = \sup \left\{ \alpha + \beta \;\middle|\;
+\begin{aligned}
+& \alpha \text{ 和 } \beta \text{ 是有尽小数，} \\
+& \alpha \leqslant a, \beta \leqslant b
+\end{aligned}
+\right\}
+\]
+就符合定理的要求。唯一性的证明基于以下想法：我们可以取彼此充分靠近的有尽小数
+$\alpha, \alpha^{'}  $，以及彼此充分靠近的有尽小数 $\beta, \beta^{'}  $，使得
+\[
+\alpha \le a \le \alpha^{'}  , \qquad \beta \le b \le \beta^{'}  .
+\]
+于是 $\alpha+\beta$ 与 $\alpha^{'}  +\beta^{'}  $ 可以任意接近，
+因而在它们之间容不下两个不同的数（Sandwich / Squeeze Theorem）。
+
+以上推想方式是令人信服的，但要严格地写出每一步证明，却是一件细致的工作。
+我们把这部分内容放到本节后的附录中，供喜欢寻根究底的读者参考。
+初学者不必也不宜在这些细节上花费太多时间，尤其不要因此而分散了对主要问题的注意力。
+
+\medskip
+\textbf{定义 1}\quad
+我们把定理 1 中所述的唯一确定的实数 $u$ 叫作实数 $a$ 与实数 $b$ 之和，
+并约定把它记为 $a+b$。
+
+\medskip
+\textbf{定义 2}\quad
+实数 $a$ 与实数 $b$ 之差定义为 $a$ 与 $-b$ 之和，即规定
+\[
+a-b = a+(-b).
+\]
+
+\medskip
+为了定义两个非负实数的乘积，我们需要以下定理。
+
+\medskip
+\hlpink{\textbf{定理 2}}\quad
+设 $a$ 和 $b$ 是非负实数（不要求有尽），则存在唯一实数$v$（不要求有尽），
+使得对于满足条件
+\[
+0 \le \alpha \le a \le \alpha^{'}  , \qquad 0 \le \beta \le b \le \beta^{'}  
+\]
+的\hlgreen{任何有尽小数} $\alpha, \alpha^{'}  $ 和 $\beta, \beta^{'}  $，都有
+\[
+\alpha \beta \le v \le \alpha^{'}   \beta^{'}  .
+\]
+
+这一定理的证明也放在本节后的附录中。
+
+\medskip
+\textbf{定义 3}\quad
+我们把定理 2 中所述的唯一确定的实数 $v$ 叫作非负实数 $a$ 与非负实数 $b$
+的乘积，并约定把它记为 $ab$。
+
+\medskip
+\textbf{定义 4}\quad
+任意实数 $a$ 与 $b$ 的乘积 $ab$ 定义如下：
+\[
+ab =
+\begin{cases}
+|a|\,|b|, & \text{如果 } a \text{ 与 } b \text{ 同号},\\[0.3em]
+-|a|\,|b|, & \text{如果 } a \text{ 与 } b \text{ 异号}.
+\end{cases}
+\]
+
+至于实数的除法，我们将在下面的附录中予以讨论。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\medskip
+\begin{center}
+补充内容
+\end{center}
+
+在这部分内容里，我们补充定理1 和定理2 的证明，并对实数的除法作相应的讨论。
+
+\medskip
+\textbf{引理 1}\quad
+设 $a$ 是任意一个实数（不要求有尽），
+则对\hlgreen{任何正的有尽小数 $\varepsilon$}，
+\hlgreen{存在有尽小数$\alpha$ 和 $\alpha^{'}  $}，满足条件
+\[
+\alpha \le a \le \alpha^{'}  , \qquad \alpha^{'}   - a < \varepsilon .
+\]
+
+（无论实数本身是不是有尽，它总能被两个足够近的有尽小数描述）
+
+\medskip
+\textbf{证明}\quad
+我们设
+\[
+\varepsilon = \varepsilon_0.\varepsilon_1 \cdots \varepsilon_p ,
+\]
+并设其中第一位不等于 $0$ 的数字出现在第 $k-1$位，
+其中 $0 \le k-1 \le p$，则有
+\[
+\frac{1}{10^k} < \varepsilon .
+\]
+
+若 $a$ 的规范小数表示为
+\[
+a = a_0.a_1 a_2 \cdots ,
+\]
+则（根据$\frac{1}{10^k} < \varepsilon$）取
+\[
+\alpha = a_0.a_1 \cdots a_k, \qquad
+\alpha^{'}   = a_0.a_1 \cdots a_k + \frac{1}{10^k}.
+\]
+
+（即：找出规范小数$a$的第$k$位小数，
+$\alpha$等于$a$的前$k$位，$\alpha^{'}  $其余部分一样，第$k$位小数要$+1$）
+
+若 $a$ 的规范小数表示为
+\[
+a = -a_0.a_1 a_2 \cdots ,
+\]
+则取
+\[
+\alpha = -a_0.a_1 \cdots a_k - \frac{1}{10^k}, \qquad
+\alpha^{'}   = -a_0.a_1 \cdots a_k .
+\]
+
+对这两种情形都有
+\[
+\alpha \le a \le \alpha^{'}  , \qquad
+\alpha^{'}   - a = \frac{1}{10^k} < \varepsilon .
+\]
+证毕。\qed
+
+\medskip
+\textbf{引理 2}\quad
+设 $c$ 和 $c^{'}  $ 是实数，且 $c \le c^{'}  $。
+如果对\hlgreen{任何正的有尽小数 $\varepsilon$}，
+\hlgreen{存在有尽小数 $\gamma$ 和 $\gamma^{'}  $}，满足条件
+\[
+\gamma \le c \le c^{'}   \le \gamma^{'}  , \qquad
+\gamma^{'}   - \gamma < \varepsilon ,
+\]
+那么必定有
+\[
+c = c^{'}   .
+\]
+
+（当一个实数不小于另一个实数（无论这两个实数是不是有尽），
+能够落入一对足够近的有尽实数内，那么这两个实数相等。）
+
+\medskip
+\textbf{证明}\quad
+用反证法。假如 $c \neq c^{'}   \implies c < c^{'}  $，那么存在有尽小数 $\eta$ 和 $\eta^{'}  $，使得
+\[
+c < \eta < \eta^{'}   < c^{'}   .
+\]
+对于$\varepsilon = \eta^{'}   - \eta > 0$（此时$\varepsilon$是有尽的），任何满足
+\[
+\gamma \le c < \eta < \eta^{'}   < c^{'}   \le \gamma^{'}  
+\]
+的有尽小数 $\gamma$ 和 $\gamma^{'}  $，都有
+\[
+\gamma^{'}   - \gamma \ge \eta^{'}   - \eta = \varepsilon ,
+\]
+这与 $\gamma^{'}   - \gamma < \varepsilon$ 矛盾。
+
+因此，如果引理所述的前提成立，则必定有 $c = c^{'}  $。
+证毕。\qed
+
+\medskip
+\textbf{引理 3}\quad
+设 $\varepsilon$ 是正的有尽小数，$M$ 和 $N$ 是自然数，
+则存在正的有尽小数 $\varepsilon^{'}  $ 和 $\varepsilon^{''}  $，使得
+\[
+M \varepsilon^{'}  + N \varepsilon^{''}   < \varepsilon .
+\]
+（总能有一对正的有尽小数，能把两个自然数关进一个足够小的区间）
+
+\medskip
+\textbf{证明}\quad
+我们设
+\[
+\varepsilon = \varepsilon_0.\varepsilon_1 \cdots \varepsilon_p ,
+\]
+并设其中第一位不等于 $0$ 的数字是 $\varepsilon_{k-1}$，
+其中 $0 \le k-1 \le p$，则有
+\[
+\frac{1}{10^k} < \varepsilon .
+\]
+
+对引理中$M,N$，我们取自然数 $m,n$，使得
+\[
+10^m \ge M, \qquad 10^n \ge N .
+\]
+再取
+\begin{align*}
+\varepsilon^{'}   = \frac{1}{10^{m+k+1}}, \qquad
+\varepsilon^{''}   = \frac{1}{10^{n+k+1}}   
+\end{align*}
+
+于是
+\begin{align*}
+M\varepsilon^{'}   + N\varepsilon^{''}   &\leq 10^m \varepsilon^{'}   + 10^n \varepsilon^{''}  \\
+        &= \frac{1}{10^{k+1}} + \frac{1}{10^{k+1}}\\
+        &< \frac{1}{10^k}\\
+        &< \varepsilon. \qed
+\end{align*}
+
+现在开始证明前面正文的内容。
+
+\medskip
+\hlgreen{\textbf{定理 1 的证明}}
+
+\textbf{存在性}\quad
+实数\[
+u = \sup \left\{ \alpha + \beta \;\middle|\;
+\begin{aligned}
+& \alpha \text{ 和 } \beta \text{ 是有尽小数，} \\
+& \alpha \leqslant a, \beta \leqslant b
+\end{aligned}
+\right\}
+\] 符合定理的要求。
+
+\medskip
+\textbf{唯一性}\quad
+对于任意正的有尽小数 $\varepsilon$和自然数 $M=N=1$。
+根据引理3，存在正的有尽小数 $\varepsilon^{'}  $ 和 $\varepsilon^{''}  $，
+使得
+\[
+\varepsilon^{'}   + \varepsilon^{''}  < \varepsilon .
+\]
+
+又根据引理1，存在有尽小数 $\alpha,\alpha^{'}  $ 和 $\beta,\beta^{'}  $，
+分别满足
+\[
+\alpha \le a \le \alpha^{'}  , \qquad \alpha^{'}   - a < \varepsilon^{'}  ,
+\]
+以及
+\[
+\beta \le b \le \beta^{'}  , \qquad \beta^{'}   - \beta < \varepsilon^{''}   .
+\]
+
+于是有
+\[
+(\alpha^{'}   + \beta^{'}  ) - (\alpha + \beta) < 2\varepsilon .
+\]
+（前面的2不影响数量级）由于 $\varepsilon$ 可以取任意正的有尽小数（引理2:意味着可以把那两个实数关进$\implies$ 这实际是一个数），
+根据引理2，满足
+\[
+\alpha + \beta \le u \le \alpha^{'}   + \beta^{'}  
+\]
+的实数 $u$ 是唯一的。\qed
+
+\medskip
+\hlgreen{\textbf{定理2的证明}}
+
+\textbf{存在性}\quad
+实数\[
+z = \sup \left\{ \alpha\beta \;\middle|\;
+\begin{aligned}
+& \alpha \text{ 和 } \beta \text{ 是有尽小数，} \\
+& 0\leq \alpha \leq a, 0\leq \beta \leq b
+\end{aligned}
+\right\}
+\] 符合定理的要求。
+
+
+\textbf{唯一性}\quad
+首先取自然数 $M,N$，使得
+\[
+0 \leq a < M, \qquad 0 \le b < N .
+\]
+其次，对于任意正的有尽小数 $\varepsilon$，
+根据引理3，存在正的有尽小数 $\varepsilon^{'} $ 和 $\varepsilon^{''} $，
+使得
+\[
+M\varepsilon^{'}  + N\varepsilon^{''} < \varepsilon .
+\]
+
+又根据引理1，存在有尽小数 $\alpha,\alpha^{'} $ 和 $\beta,\beta^{'} $，
+分别满足
+\[
+0 \le \alpha \le a \le \alpha^{'}  < M, \qquad \alpha^{'}  - \alpha < \varepsilon^{''}  ,
+\]
+以及
+\[
+0 \le \beta \le b \le \beta^{'}  < N, \qquad \beta^{'}  - \beta < \varepsilon^{'}  .
+\]
+
+于是
+\begin{align*}
+\alpha^{'} \beta^{'}  - \alpha\beta
+&= \alpha^{'} \beta^{'}  - \alpha^{'} \beta + \alpha^{'} \beta - \alpha\beta\\
+&= \alpha^{'} (\beta^{'}  - \beta) + (\alpha^{'}  - \alpha)\beta \\
+&< M\varepsilon^{'}  + N\varepsilon^{''}   \\
+&< \varepsilon .
+\end{align*}
+
+由于 $\varepsilon$ 可以取任意正的有尽小数，
+根据引理2，符合定理要求的实数 $v$ 是唯一的。\qed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+下面讨论实数的\hlgreen{除法}。在初等数学的课程里，我们学习过有尽小数的“长除法”（除法竖式）。
+这是一种可以用来确定近似商的除法手段。
+对于给定的正的有尽小数 $\alpha,\beta$ 和自然数 $n$，
+通过逐位试商，可以确定存在一个有尽小数
+\[
+\gamma = \gamma_0.\gamma_1 \cdots \gamma_n
+\]
+满足
+\[
+\gamma\cdot \alpha \le \beta < \left(\gamma+\frac{1}{10^n}\right)\cdot \alpha .
+\]
+对于给定的 $\alpha,\beta$ 和 $n$，这样的 $\gamma$ 是唯一确定的。
+我们把这样的
+\[
+\gamma \quad \text{和} \quad \gamma^{'}  = \gamma+\frac{1}{10^n}
+\]
+分别叫作 $\beta \div \alpha$ 的、精确到小数点以后 $n$ 位的
+\textbf{不足近似商}和\textbf{过剩近似商}，
+并约定用以下记号表示它们：
+\[
+(\frac{\beta}{\alpha})_n = \gamma, \qquad (\frac{\beta}{\alpha})_n^{'}  = \gamma ^{'} .
+\]
+
+为了定义任意实数 $b$ 除以任意非零实数 $a$ 的商，
+可以先考察 $a>0,\; b=1$ 的情形。
+只要对 $a>0$ 的情形定义了 $1/a$，
+就可以按以下方式定义任意实数 $b$ 除以任意非零实数 $a$ 的商：
+\[
+\frac{b}{a} =
+\begin{cases}
+ \dfrac{1}{|a|}\cdot |b| , & a \text{ 与 } b \text{ 同号},\\[6pt]
+-\dfrac{1}{|a|}\cdot |b|, & a \text{ 与 } b \text{ 异号}.
+\end{cases}
+\]
+
+
+\hlpink{\textbf{定理 3}}\quad
+对任何正实数 $a$，存在唯一的正实数 $w$，
+使得对于满足
+\[
+0<\alpha \le a \le \alpha^{'} 
+\]
+的任何有尽小数 $\alpha,\alpha^{'} $，
+以及任意自然数 $m,n$，都有
+\[
+\left(\frac{1}{\alpha^{'} }\right)_m \le w \le \left(\frac{1}{\alpha}\right)_n^{'}  .
+\]
+
+\medskip
+\textbf{定义}\quad
+我们把定理3中所述的唯一确定的正实数 $w$
+叫作正实数 $a$ 的\textbf{倒数}，
+并把它记为 $1/a$。在下面的证明中，我们将利用有尽小数乘法的以下性质：
+
+对于任何正的有尽小数 $\beta,\gamma,\gamma^{'} $，都有
+\begin{align*}
+\beta\gamma < \beta\gamma^{'}  &\iff \gamma < \gamma^{'} , \\
+\beta\gamma = \beta\gamma^{'}  &\iff \gamma = \gamma^{'} , \\
+\beta\gamma > \beta\gamma^{'}  &\iff \gamma > \gamma^{'} .
+\end{align*}
+
+\medskip
+\hlgreen{\textbf{定理 3 的证明}}
+
+\medskip
+\textbf{存在性}\quad
+由于
+\[
+\alpha^{'}  \cdot \left(\frac{1}{\alpha^{'} }\right)_m
+\le 1
+\le \alpha \cdot \left(\frac{1}{\alpha^{'} }\right)_n
+\le \alpha^{'}  \cdot \left(\frac{1}{\alpha^{'} }\right)_n
+\]
+所以
+\[
+\left(\frac{1}{\alpha^{'} }\right)_m
+\le \left(\frac{1}{\alpha}\right)_n^{'},
+\qquad \forall\, m,n\in\mathbb{N}.
+\]
+由此容易看出，实数 
+实数\[
+w = \sup \left\{(\frac{1}{\alpha^{'}})_m \;\middle|\;
+\begin{aligned}
+& \alpha^{'} \text{是有尽小数，} \\
+& \alpha^{'} \geq a \text{,} m \in \mathbb{N}
+\end{aligned}
+\right\}
+\] 
+符合定理的要求。
+
+\medskip
+\textbf{唯一性}\quad
+首先，取
+\[
+\sigma=\frac{1}{10^k}, \qquad M=10^l,
+\]
+使得
+\[
+0<\sigma<a<M.
+\]
+其次，设 $\varepsilon$ 是任意一个正的有尽小数。
+根据引理3，存在正的有尽小数 $\varepsilon^{'} ,\varepsilon^{''}  $，
+使得
+\[
+\varepsilon^{'}  + 10^{2(k+1)}\varepsilon^{''}   < \varepsilon .
+\]
+从而
+\[
+\sigma^2\varepsilon^{'}  + M^2\varepsilon^{''}  \\
+=\sigma^2(\varepsilon^{'}  + 10^{2(k+1)}\varepsilon^{''})\\
+< \sigma^2\varepsilon .
+\]
+
+我们可以选取有尽小数 $\alpha,\alpha^{'} $ 和自然数 $n$，
+满足
+\[
+0<\sigma<a\le \alpha^{'}  < M, \qquad
+\alpha^{'}  - a < \sigma^2\varepsilon^{'} , \qquad
+\frac{1}{10^{n-1}} < \varepsilon^{''}   .
+\]
+这样选取$\alpha$，$\alpha^{'}$和$n$应该使得
+
+
+
+\begin{align*}
+\sigma^2\left\{ \left( \frac{1}{\alpha} \right)_n^{'} -
+ \left( \frac{1}{\alpha^{'}} \right)_n \right\} 
+&\leq \alpha \alpha^{'}\left\{ \left( \frac{1}{\alpha} \right)_n^{'} - 
+\left( \frac{1}{\alpha^{'}} \right)_n \right\} \\
+&= \alpha \alpha^{'}\left\{ \left( \left( \frac{1}{\alpha} \right)_n + 
+\frac{1}{10^n} \right) - \left( \left( \frac{1}{\alpha^{'}} \right)_n^{'} - 
+\frac{1}{10^n} \right) \right\} \\
+&= \alpha^{'}\left\{ \alpha \left( \frac{1}{\alpha} \right)_n \right\} - 
+\alpha^{'}\left\{ \alpha \left( \frac{1}{\alpha^{'}} \right)_n^{'} \right\} + 
+2\alpha \alpha^{'} \frac{1}{10^n} \\
+&< \alpha^{'} - \alpha + \alpha \alpha^{'} \frac{1}{10^{n-1}} \\
+&< \sigma^2 \varepsilon^{'} + M^2 \varepsilon^{''} < \sigma^2 \varepsilon.
+\end{align*}
+
+于是有
+\[
+(\frac{1}{\alpha})^{'}_n - (\frac{1}{\alpha})_n < \varepsilon
+\]
+因为这里的 $\varepsilon$ 可以是任意正的有尽小数，
+故满足定理条件的实数 $w$ 不能多于一个，
+从而唯一性得证。\qed
+
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi
