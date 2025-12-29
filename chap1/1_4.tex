@@ -1,0 +1,132 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside,utf8]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+
+\section{实数系的基本性质综述}
+
+
+本节综述实数系的一些最基本的性质。这些性质将是我们以后讨论的基础。
+以下分三组介绍这些性质：运算性质、顺序性质和连续性质。
+
+\subsection*{一、运算性质}
+
+在实数系 $\mathbb{R}$ 中定义了加法运算“$+$”和乘法运算“$\cdot$”，
+使得对任意的 $a\in\mathbb{R}$ 和 $b\in\mathbb{R}$，
+都有确定的 $a+b\in\mathbb{R}$ 和确定的 $a\cdot b\in\mathbb{R}$ 与之对应，
+并且以下运算律成立：
+
+\medskip
+\begin{enumerate}[label=$(F_{\arabic*})$]
+  \item 加法是交换的，即
+  \[
+    a+b=b+a,\qquad \forall\, a,b\in\mathbb{R}.
+  \]
+
+  \item 加法是结合的，即
+  \[
+    (a+b)+c=a+(b+c),\qquad \forall\, a,b,c\in\mathbb{R}.
+  \]
+
+  \item $0\in\mathbb{R}$ 对于加法起着特定的作用，即
+  \[
+    0+a=a+0=a,\qquad \forall\, a\in\mathbb{R}.
+  \]
+
+  \item 对每一个 $a\in\mathbb{R}$，都存在一个与它相反的数 $-a\in\mathbb{R}$，
+  使得
+  \[
+    (-a)+a=a+(-a)=0.
+  \]
+
+  \item 乘法是交换的，即
+  \[
+    a\cdot b=b\cdot a,\qquad \forall\, a,b\in\mathbb{R}.
+  \]
+
+  \item 乘法是结合的，即
+  \[
+    (a\cdot b)\cdot c=a\cdot(b\cdot c),\qquad \forall\, a,b,c\in\mathbb{R}.
+  \]
+
+  \item $1\in\mathbb{R}$ 对于乘法起着特定的作用，即
+  \[
+    1\cdot a=a\cdot 1=a,\qquad \forall\, a\in\mathbb{R}.
+  \]
+
+  \item 对每一个 $a\in\mathbb{R}$ 且 $a\neq 0$，都存在一个倒数 $a^{-1}\in\mathbb{R}$，
+  使得
+  \[
+    a^{-1}\cdot a=a\cdot a^{-1}=1.
+  \]
+
+  \item 乘法对于加法是分配的，即
+  \[
+    a\cdot(b+c)=a\cdot b+a\cdot c,\qquad \forall\, a,b,c\in\mathbb{R}.
+  \]
+\end{enumerate}
+
+\subsection*{二、顺序性质}
+
+在实数系 $\mathbb{R}$ 中定义了顺序关系“$<$”（
+在以下的陈述中也出现记号“$>$”，我们约定：
+“$a>b$”只是“$b<a$”的另一种写法，表示的是同一件事情）。
+顺序关系“$<$”具有以下性质：
+
+\medskip
+\begin{enumerate}[label=($O_{\arabic*})$]
+  \item 对任意的 $a\in\mathbb{R}$ 与 $b\in\mathbb{R}$，
+  必有并且只有以下三种情形之一出现：
+  \[
+    a<b,\quad a=b,\quad \text{或者}\ a>b.
+  \]
+  （这一性质通常叫作\emph{三歧性}。）
+
+  \item 关系“$<$”具有传递性，即
+  \[
+    a<b,\ b<c \;\Rightarrow\; a<c.
+  \]
+
+  \item 加以实数的运算保持顺序关系，即
+  \[
+    a<b \;\Rightarrow\; a+c<b+c.
+  \]
+
+  \item 乘以正实数的运算保持顺序关系，即
+  \[
+    a<b,\ c>0 \;\Rightarrow\; a\cdot c<b\cdot c.
+  \]
+\end{enumerate}
+
+\subsection*{三、连续性质}
+
+在实数系 $\mathbb{R}$ 中，以下的确界原理成立：
+
+\begin{quote}
+\textbf{(C) 确界原理}：
+$\mathbb{R}$ 的任何一个非空而有上界的子集合，在 $\mathbb{R}$ 中都有上确界。
+\end{quote}
+
+我们对上面所列的性质做一些说明。
+
+定义有加法与乘法运算并且符合运算律 $(F_1)\sim(F_9)$ 的集合，
+通常称为\emph{域}。
+实数系是一个域，有理数系和复数系也都是域。
+
+定义有顺序关系“$<$”并且符合 \((O_1)\sim(O_4)\) 要求的一个域，
+被称为\emph{有序域}。
+实数系是一个有序域，有理数系也是一个有序域，
+但复数系不是有序域。
+
+确界原理 (C) 说明了实数系的连续性。
+因此我们说：实数系 $\mathbb{R}$ 是一个\emph{连续的有序域}。
+
+
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi
