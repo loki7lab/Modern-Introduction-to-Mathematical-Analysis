@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  18 DEC 2025 11:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  12 JUN 2026 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Volumes/seeL/xin/latex_template/chap1/1_1
-(/Volumes/seeL/xin/latex_template/chap1/1_1.tex
+**"/Volumes/seeL/loki7lab/Modern Introduction to Mathematical Analysis/chap1/1_1"
+(/Volumes/seeL/loki7lab/Modern Introduction to Mathematical Analysis/chap1/1_1.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/ctex/ctexbook.cls (/usr/local/texlive/2025/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -712,22 +712,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip120
-)
-
-../config/config.tex:87: LaTeX Error: Command \hl already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87 }
-      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
+))
 No file 1_1.aux.
 \openout1 = `1_1.aux'.
 
@@ -1025,12 +1010,12 @@ Package rerunfilecheck Info: Checksums for `1_1.out':
  )
 (\end occurred when \ifx on line 126 was incomplete) 
 Here is how much of TeX's memory you used:
- 21549 strings out of 473832
- 446863 string characters out of 5729481
- 907636 words of memory out of 5000000
- 44250 multiletter control sequences out of 15000+600000
+ 21552 strings out of 473832
+ 447014 string characters out of 5729481
+ 907770 words of memory out of 5000000
+ 44253 multiletter control sequences out of 15000+600000
  567868 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,12n,114p,1319b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,114p,1356b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on 1_1.pdf (3 pages).

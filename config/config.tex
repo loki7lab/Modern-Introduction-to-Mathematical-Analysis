@@ -21,11 +21,23 @@
 % -------------------------- 3. 章节标题样式 --------------------------
 % 部分（Part）标题：新页+居中+特大号加粗
 \titleformat{\part}{\newpage\centering\Huge\bfseries}{}{0em}{}
-\titlespacing*{\part}{0pt}{0ex}{3.0ex} % 部分标题间距
+\titlespacing*{\part}{10pt}{10ex}{3.0ex} % 部分标题间距
 
-% 章节（Chapter）标题：居中+大号加粗+带章节号
-\titleformat{\chapter}{\centering\Large\bfseries}{\thechapter.}{1em}{}
-\titlespacing*{\chapter}{0pt}{3.0ex}{2.0ex} % 章节标题间距
+% 章节（Chapter）标题：仿原书“第一章  实  数”
+\newcommand{\chaptertitleformat}[1]{%
+    \makebox[4em][s]{#1}%
+}
+
+\titleformat{\chapter}[block]
+    {\thispagestyle{empty}\centering\zihao{3}\bfseries}
+    {第\chinese{chapter}章}
+    {2.5em}
+    {\chaptertitleformat}
+
+\titlespacing*{\chapter}
+    {0pt}
+    {0.15\textheight}
+    {2.0em}
 
 % 小节（Section）标题：大号加粗+带§符号
 \titleformat{\section}{\centering\large\bfseries}{§\arabic{section}}{0.8em}{}
@@ -35,6 +47,74 @@
 \newcommand{\explanation}[1]{\chapter*{#1}}
 
 
+% 部分（Part）标题：仿原书标题页
+\newcommand{\bookpart}[2]{%
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{part}{#1\quad #2}%
+    \thispagestyle{empty}%
+    \vspace*{0.24\textheight}%
+    \begin{center}
+        {\zihao{2}\bfseries\makebox[5em][s]{#1}}\par
+        \vspace{2.2em}
+        {\zihao{3}\bfseries\makebox[7em][s]{#2}}\par
+    \end{center}
+    \clearpage
+}
+
+% -------------------------- 目录格式 --------------------------
+
+% 目录标题：“目  录”居中
+\renewcommand{\contentsname}{\makebox[4em][s]{目录}}
+\renewcommand{\cfttoctitlefont}{\hfill\zihao{3}\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{0.14\textheight}
+\setlength{\cftaftertoctitleskip}{2.5em}
+
+% 目录只显示到 section
+\setcounter{tocdepth}{1}
+
+% section 编号只显示本章内编号：1, 2, 3...
+% 目录中再加 §，得到 “§ 1”
+\renewcommand{\thesection}{\arabic{section}}
+
+% hyperref 锚点仍保留 chapter.section，避免不同章的 §1 重名
+\renewcommand{\theHchapter}{\arabic{chapter}}
+\renewcommand{\theHsection}{\arabic{chapter}.\arabic{section}}
+
+% part 在目录中居中显示，不显示页码
+\makeatletter
+\renewcommand*{\l@part}[2]{%
+    \vskip 1.8em
+    \begingroup
+        \centering
+        \zihao{4}\bfseries #1\par
+    \endgroup
+    \vskip 1.2em
+}
+\makeatother
+
+% chapter 目录项：第一章  实数 ........ (21)
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries(}
+\renewcommand{\cftchapafterpnum}{)}
+
+\setlength{\cftchapnumwidth}{4.5em}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% section 目录项：§ 1  实数的无尽小数表示与顺序 ........ (21)
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont(}
+\renewcommand{\cftsecafterpnum}{)}
+\renewcommand{\cftsecpresnum}{\S\ }
+\renewcommand{\cftsecaftersnum}{\quad}
+\setlength{\cftsecindent}{2em}
+\setlength{\cftsecnumwidth}{3em}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% 条目间距
+\setlength{\cftbeforechapskip}{0.8em}
+\setlength{\cftbeforesecskip}{0.35em}
 
 % -------------------------- 4. 段落与列表格式 --------------------------
 \parindent=2em % 段落首行缩进2字符
@@ -61,12 +141,12 @@
   \ULon{#1}%
 }
 
-% -------------------------- 5. 页眉页脚配置 --------------------------
+
 % -------------------------- 5. 页眉页脚配置 --------------------------
 \setlength{\headheight}{15pt} % 解决 headheight too small 警告
 \pagestyle{fancy} % 使用fancy样式
 \fancyhf{} % 清空默认内容
-\fancyhead[L]{\leftmark} % 左页眉：当前章节标题
+%\fancyhead[L]{\leftmark} % 左页眉：当前章节标题
 \fancyhead[R]{\thepage} % 右页眉：页码
 \renewcommand{\headrulewidth}{0.4pt} % 页眉下边框线宽
 \renewcommand{\footrulewidth}{0pt} % 隐藏页脚下边框

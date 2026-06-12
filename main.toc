@@ -1,1 +1,12 @@
-\contentsline {part}{第一部分\hspace {1em}Preparatory Chapter\\Background Knowledge}{1}{part.1}%
+\contentsline {part}{预篇\hskip 1em\relax 准备知识}{1}{section*.2}%
+\contentsline {section}{\numberline {1}集合与逻辑记号}{2}{section.0.1}%
+\contentsline {section}{\numberline {2}函数与映射}{5}{section.0.2}%
+\contentsline {section}{\numberline {3}连加符号与连乘符号}{9}{section.0.3}%
+\contentsline {section}{\numberline {4}面积、路程与功的计算}{12}{section.0.4}%
+\contentsline {section}{\numberline {5}切线、速度与变化率}{17}{section.0.5}%
+\contentsline {part}{第一篇\hskip 1em\relax 分析基础}{20}{section*.3}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}实数}{21}{chapter.1}%
+\contentsline {section}{\numberline {1}实数的无尽小数表示与顺序}{21}{section.1.1}%
+\contentsline {section}{\numberline {2}实数系的连续性}{23}{section.1.2}%
+\contentsline {section}{\numberline {3}实数的四则运算}{28}{section.1.3}%
+\contentsline {section}{\numberline {4}实数系的基本性质综述}{36}{section.1.4}%

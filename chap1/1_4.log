@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  12 JUN 2026 10:48
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  12 JUN 2026 17:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -717,7 +717,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 LaTeX Warning: Unused global option(s):
     [utf8].
 
-(./1_4.aux)
+No file 1_4.aux.
 \openout1 = `1_4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -797,7 +797,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/CourierNew(0)/b/n on input line 5.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -868,9 +867,11 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package hyperref Info: Link coloring OFF on input line 5.
-(./1_4.out) (./1_4.out)
 \@outlinefile=\write3
 \openout3 = `1_4.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package microtype Info: Character `textendash ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/14.4'.
@@ -945,7 +946,7 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/6'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1000,15 +1001,22 @@ Package microtype Info: Character `textquotedblright ' is missing
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `1_4.out' has not changed.
-(rerunfilecheck)             Checksum: DA4063AE5367B4AFA0F5631377FED766;125.
+
+
+Package rerunfilecheck Warning: File `1_4.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `1_4.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  DA4063AE5367B4AFA0F5631377FED766;125.
  )
 (\end occurred when \ifx on line 130 was incomplete) 
 Here is how much of TeX's memory you used:
- 21535 strings out of 473832
- 445581 string characters out of 5729481
- 893811 words of memory out of 5000000
- 44230 multiletter control sequences out of 15000+600000
+ 21526 strings out of 473832
+ 445491 string characters out of 5729481
+ 893809 words of memory out of 5000000
+ 44227 multiletter control sequences out of 15000+600000
  567868 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,12n,114p,1356b,534s stack positions out of 10000i,1000n,20000p,200000b,200000s

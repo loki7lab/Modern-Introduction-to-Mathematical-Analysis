@@ -13,17 +13,34 @@
 \begin{document}
 
 \tableofcontents % 目录
-\listoffigures  % 图目录
-\listoftables   % 表目录
+%\listoffigures  % 图目录
+%\listoftables   % 表目录
 
 \include{pre/pre.tex}
+\include{pre/notion.tex}
+
 
 \clearpage
 \pagenumbering{arabic}
 
 % 解决 PDF 书签换行报错
-\part{\texorpdfstring{Preparatory Chapter\\Background Knowledge}{Preparatory Chapter Background Knowledge}}
+%\part{\texorpdfstring{Preparatory Chapter\\Background Knowledge}{Preparatory Chapter Background Knowledge}}
 
-\include{chap1/chap.tex}
+\bookpart{预篇}{准备知识}
+
+\include{chap0/0_1}
+\include{chap0/0_2}
+\include{chap0/0_3}
+\include{chap0/0_4}
+\include{chap0/0_5}
+
+\bookpart{第一篇}{分析基础}
+\input{chap1/1_0}
+\input{chap1/1_1}
+\input{chap1/1_2}
+\input{chap1/1_3}
+\input{chap1/1_4}
+
+
 
 \end{document}
