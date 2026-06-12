@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  12 JUN 2026 19:36
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  12 JUN 2026 20:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Volumes/seeL/loki7lab/Modern Introduction to Mathematical Analysis/chap1/1_4"
-(/Volumes/seeL/loki7lab/Modern Introduction to Mathematical Analysis/chap1/1_4.tex
+**"/Volumes/seeL/loki7lab/Modern Introduction to Mathematical Analysis/chap1/1_5"
+(/Volumes/seeL/loki7lab/Modern Introduction to Mathematical Analysis/chap1/1_5.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/ctex/ctexbook.cls (/usr/local/texlive/2025/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -712,13 +712,8 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip120
-))
-
-LaTeX Warning: Unused global option(s):
-    [utf8].
-
-(./1_4.aux)
-\openout1 = `1_4.aux'.
+)) (./1_5.aux)
+\openout1 = `1_5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -868,9 +863,9 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package hyperref Info: Link coloring OFF on input line 5.
-(./1_4.out) (./1_4.out)
+(./1_5.out) (./1_5.out)
 \@outlinefile=\write3
-\openout3 = `1_4.out'.
+\openout3 = `1_5.out'.
 
 Package microtype Info: Character `textendash ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/14.4'.
@@ -909,6 +904,24 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/b/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textendash ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textemdash ' is missing
@@ -944,27 +957,27 @@ Package microtype Info: Character `textquotedblleft ' is missing
 Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/6'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 16.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+esint on input line 18.
+LaTeX Font Info:    Trying to load font information for U+esint on input line 16.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 18.
+LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 16.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
@@ -975,42 +988,50 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 [1
 
 ]
+
+[2]
+
+[3]
+File: ../figure/1_5.jpg Graphic file (type bmp)
+<../figure/1_5.jpg>
 Package microtype Info: Character `textendash ' is missing
-(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textemdash ' is missing
-(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textquoteleft ' is missing
-(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textquoteright ' is missing
-(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textquotedblleft ' is missing
-(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textquotedblright ' is missing
-(microtype)             in font `TU/TimesNewRoman(0)/b/n/12'.
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 
 
-[2] (./1_4.aux)
+[4]
+
+[5] (./1_5.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `1_4.out' has not changed.
-(rerunfilecheck)             Checksum: DA4063AE5367B4AFA0F5631377FED766;125.
+Package rerunfilecheck Info: File `1_5.out' has not changed.
+(rerunfilecheck)             Checksum: 722EC3224C22982B6F2E782235A2DA16;69.
  )
-(\end occurred when \ifx on line 130 was incomplete) 
+(\end occurred when \ifx on line 273 was incomplete) 
 Here is how much of TeX's memory you used:
- 21540 strings out of 473832
- 445647 string characters out of 5729481
- 893898 words of memory out of 5000000
- 44235 multiletter control sequences out of 15000+600000
- 567868 words of font info for 116 fonts, out of 8000000 for 9000
+ 21474 strings out of 473832
+ 440755 string characters out of 5729481
+ 890859 words of memory out of 5000000
+ 44165 multiletter control sequences out of 15000+600000
+ 567884 words of font info for 118 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,12n,114p,1356b,534s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,114p,1356b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 1_4.pdf (2 pages).
+Output written on 1_5.pdf (5 pages).

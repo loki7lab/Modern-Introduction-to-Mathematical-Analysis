@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  12 JUN 2026 19:32
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.4)  12 JUN 2026 20:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1100,7 +1100,7 @@ Package microtype Info: Character `textquotedblright ' is missing
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.0pt
-(hyperref)                replaced by space on input line 29.
+(hyperref)                replaced by space on input line 25.
 
 Package microtype Info: Character `textendash ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/m/n/22.08249'.
@@ -1139,12 +1139,12 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/TimesNewRoman(0)/b/n/22.08249'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Underfull \hbox (badness 10000) detected at line 29
+Underfull \hbox (badness 10000) detected at line 25
 \TU/SongtiSC(0)/b/n/22.08249 预 篇
  []
 
 
-Underfull \hbox (badness 10000) detected at line 29
+Underfull \hbox (badness 10000) detected at line 25
 \TU/SongtiSC(0)/b/n/16.06 准 备 知 识
  []
 
@@ -1254,15 +1254,15 @@ File: ./figure/0_3.jpg Graphic file (type bmp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.0pt
-(hyperref)                replaced by space on input line 37.
+(hyperref)                replaced by space on input line 33.
 
 
-Underfull \hbox (badness 10000) detected at line 37
+Underfull \hbox (badness 10000) detected at line 33
 \TU/SongtiSC(0)/b/n/22.08249 第 一 篇
  []
 
 
-Underfull \hbox (badness 10000) detected at line 37
+Underfull \hbox (badness 10000) detected at line 33
 \TU/SongtiSC(0)/b/n/16.06 分 析 基 础
  []
 
@@ -1329,23 +1329,54 @@ File: ./figure/1_2.jpg Graphic file (type bmp)
 
 [36]
 
-[37])
+[37]) (./chap1/1_5.tex
 
-[38] (./main.aux (./pre/pre.aux) (./pre/notion.aux) (./chap0/0_1.aux) (./chap0/0_2.aux) (./chap0/0_3.aux) (./chap0/0_4.aux) (./chap0/0_5.aux))
+[38]
+
+[39]
+
+[40]
+
+[41]
+File: ./figure/1_5.jpg Graphic file (type bmp)
+<./figure/1_5.jpg>
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/TimesNewRoman(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[42])
+
+[43] (./main.aux (./pre/pre.aux) (./pre/notion.aux) (./chap0/0_1.aux) (./chap0/0_2.aux) (./chap0/0_3.aux) (./chap0/0_4.aux) (./chap0/0_5.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3C37684715409F64E65D4A39A89B6998;1385.
+(rerunfilecheck)             Checksum: 5AA9CE4E04E6C3C3C8D0EF3E7AAE0BF5;1464.
  ) 
 Here is how much of TeX's memory you used:
- 22133 strings out of 473832
- 469728 string characters out of 5729481
+ 22157 strings out of 473832
+ 470299 string characters out of 5729481
  902214 words of memory out of 5000000
- 44745 multiletter control sequences out of 15000+600000
- 567940 words of font info for 125 fonts, out of 8000000 for 9000
+ 44764 multiletter control sequences out of 15000+600000
+ 567956 words of font info for 127 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,13n,114p,1359b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (41 pages).
+Output written on main.pdf (46 pages).

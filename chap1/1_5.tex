@@ -1,0 +1,275 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+\section{不等式}
+
+本节介绍常用的一些不等式。
+
+\medskip
+\noindent\textbf{涉及绝对值的不等式}
+
+实数 $a$ 的绝对值 $|a|$ 定义为
+\[
+|a| =
+\begin{cases}
+a, & \text{如果 } a\ge 0,\\
+-a, & \text{如果 } a<0.
+\end{cases}
+\]
+
+我们来考察不等式
+\[
+|x|<\alpha.
+\]
+根据绝对值的定义，该不等式等价于
+\[
+0\le x<\alpha,\quad \text{或者}\quad x<0,\ -x<\alpha,
+\]
+即
+\[
+-\alpha<x<\alpha.
+\]
+我们得到：
+\[
+|x|<\alpha \Longleftrightarrow -\alpha<x<\alpha.
+\]
+即：不等式 $|x|<\alpha$ 的解的集合是开区间
+\[
+(-\alpha,\alpha).
+\]
+
+类似地可以证明
+\[
+|y|\le \beta \Longleftrightarrow -\beta\le y\le \beta.
+\]
+即：不等式 $|y|\le \beta$ 的解的集合是闭区间
+\[
+[-\beta,\beta].
+\]
+
+我们有显然的不等式
+\[
+-|a|\le a\le |a|,\qquad -|b|\le b\le |b|.
+\]
+将这些不等式相加可得
+\[
+-(|a|+|b|)\le a+b\le |a|+|b|.
+\]
+由此又得到重要的不等式
+\[
+|a+b|\le |a|+|b|.
+\]
+
+运用这样的不等式，可以得到
+\[
+|a|=|(a-b)+b|\le |a-b|+|b|,
+\]
+\[
+|a|-|b|\le |a-b|.
+\]
+同理可得
+\[
+|b|-|a|\le |b-a|=|a-b|,
+\]
+即
+\[
+|a|-|b|\ge -|a-b|.
+\]
+我们得到了
+\[
+-|a-b|\le |a|-|b|\le |a-b|,
+\]
+即
+\[
+\bigl||a|-|b|\bigr|\le |a-b|.
+\]
+
+利用归纳法，可以把不等式
+\[
+|a+b|\le |a|+|b|
+\]
+推广到 $n$ 个实数的情形：
+\[
+|a_1+a_2+\cdots+a_n|\le |a_1|+|a_2|+\cdots+|a_n|.
+\]
+
+\medskip
+\noindent\textbf{伯努利(Bernoulli)不等式}
+
+设 $x\ge 0$，则由二项式定理
+\[
+(1+x)^n
+=1+nx+\frac{n(n-1)}{2}x^2+\cdots+x^n
+\]
+可以得到
+\[
+(1+x)^n\ge 1+nx.
+\]
+该不等式实际上对任何 $x\ge -1$ 成立。请看下面的定理。
+
+\medskip
+\textbf{定理}\quad 以下的伯努利不等式成立：
+\[
+(1+x)^n\ge 1+nx,\qquad \forall x\ge -1.
+\]
+
+\textbf{证明}\quad
+我们采用数学归纳法。$n=1$ 时，上式显然以等式的形式成立。
+假设已经证明了
+\[
+(1+x)^{n-1}\ge 1+(n-1)x,\qquad \forall x\ge -1,
+\]
+则
+\begin{align*}
+(1+x)^n
+&=(1+x)^{n-1}(1+x)\\
+&\ge [1+(n-1)x](1+x)\\
+&=1+(n-1)x+x+(n-1)x^2\\
+&\ge 1+nx,\qquad \forall x\ge -1.
+\end{align*}
+这证明了对一切自然数 $n$ 伯努利不等式成立。\qed
+
+\medskip
+\noindent\textbf{算术平均数与几何平均数不等式}
+
+设 $x_1$ 和 $x_2$ 是非负实数。我们把
+\[
+\frac{x_1+x_2}{2}
+\]
+叫作这两个数的算术平均数，把 $\sqrt{x_1x_2}$ 叫作这两个数的几何平均数。
+以下的不等式显然成立：
+\[
+(\sqrt{x_1}-\sqrt{x_2})^2\ge 0.
+\]
+由此得到
+\[
+\frac{x_1+x_2}{2}\ge \sqrt{x_1x_2}.
+\]
+即：算术平均数大于或等于几何平均数。
+
+对 $n$ 个非负实数，也有相应的结果：
+
+\medskip
+\textbf{定理}\quad
+设 $x_1,x_2,\cdots,x_n\ge 0$，则以下的算术平均数与几何平均数不等式
+（AM-GM 不等式）成立：
+\[
+\frac{x_1+x_2+\cdots+x_n}{n}
+\ge \sqrt[n]{x_1x_2\cdots x_n}.
+\]
+
+\textbf{证明}\quad
+我们利用数学归纳法。$n=1$ 的时候，上式显然以等式形式成立。
+假设对任意 $n-1$ 个非负实数，算术平均数与几何平均数不等式成立。
+我们来考虑 $n$ 个非负实数 $x_1,x_2,\cdots,x_n$ 的情形。
+不妨设 $x_n$ 是这 $n$ 个数中最大的一个
+（我们总可以从小到大排列这 $n$ 个非负实数，于是最后一个数就是最大的一个）。
+记
+\[
+A=\frac{x_1+\cdots+x_{n-1}}{n-1},
+\]
+则有
+\[
+x_n\ge A
+=\frac{x_1+\cdots+x_{n-1}}{n-1}
+\ge \sqrt[n-1]{x_1\cdots x_{n-1}}.
+\]
+于是
+\begin{align*}
+\left(\frac{x_1+\cdots+x_n}{n}\right)^n
+&=\left[\frac{(n-1)A+x_n}{n}\right]^n\\
+&=\left(A+\frac{x_n-A}{n}\right)^n\\
+&=A^n+nA^{n-1}\left(\frac{x_n-A}{n}\right)+\cdots\\
+&\ge A^n+nA^{n-1}\left(\frac{x_n-A}{n}\right)\\
+&=A^n+A^{n-1}(x_n-A)\\
+&=A^{n-1}x_n\\
+&\ge x_1\cdots x_{n-1}x_n.
+\end{align*}
+即
+\[
+\frac{x_1+\cdots+x_n}{n}\ge \sqrt[n]{x_1\cdots x_n}.
+\]
+\qed
+
+\medskip
+\noindent\textbf{涉及三角函数的不等式}
+
+几何学的讨论也是发现和证明不等式的一个重要途径。
+我们举以下的例子来说明这种方法。在数学理论的推导中，
+涉及角的度量时，通常采用弧度作为单位。
+
+\medskip
+\textbf{定理}\quad
+对于用弧度表示的角 $x$，有以下不等式成立
+\[
+\sin x<x<\tan x,\qquad \forall x\in \left(0,\frac{\pi}{2}\right).
+\]
+
+\textbf{证明}\quad
+在单位圆 $O$ 中作圆心角 $x$，它的始边为 $OX$ 轴上的 $OA$，
+终边为 $OB$。用线段联结 $AB$。过 $A$ 点作 $OX$ 轴的垂线交 $OB$ 延长线于 $C$（图 1-1）。
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.42\textwidth]{1_5.jpg}
+
+    {\small 图 1-1}
+\end{center}
+
+我们有：
+\[
+\triangle OAB \text{ 的面积}
+< \text{扇形 } OAB \text{ 的面积}
+< \triangle OAC \text{ 的面积},
+\]
+即
+\[
+\frac{1}{2}\sin x<\frac{1}{2}x<\frac{1}{2}\tan x.
+\]
+这样，我们证明了
+\[
+\sin x<x<\tan x,\qquad \forall x\in \left(0,\frac{\pi}{2}\right).
+\]
+\qed
+
+\medskip
+\textbf{推论}\quad
+以下不等式成立
+\[
+|\sin x|\le |x|,\qquad \forall x\in\mathbb{R}.
+\]
+
+\textbf{证明}\quad
+我们有
+\[
+|\sin x|=\sin x\le x=|x|,
+\qquad \forall x\in\left[0,\frac{\pi}{2}\right),
+\]
+和
+\[
+|\sin(-x)|=\sin x\le x=|-x|,
+\qquad \forall x\in\left[0,\frac{\pi}{2}\right).
+\]
+综合以上两式就得到
+\[
+|\sin x|\le |x|,
+\qquad \forall x\in\left(-\frac{\pi}{2},\frac{\pi}{2}\right).
+\]
+而当 $|x|\ge \frac{\pi}{2}$ 时，又有
+\[
+|\sin x|\le 1<\frac{\pi}{2}\le |x|.
+\]
+于是，我们得到不等式
+\[
+|\sin x|\le |x|,\qquad \forall x\in\mathbb{R}.
+\]
+\qed
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi
