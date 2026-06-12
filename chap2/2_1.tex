@@ -1,0 +1,611 @@
+\ifx\allfiles\undefined% 如果这个没定义主文件
+    \documentclass[12pt,a4paper,oneside]{ctexbook}
+    \def\basepath{../}%basepath =  '../config'
+    \input{../config/config}% 传进去后有 ../config/package.tex
+    \begin{document}
+\else% 如果定义了
+\fi
+
+\section{有界序列与无穷小序列}
+
+从自然数集 $\mathbb{N}$ 到实数集 $\mathbb{R}$ 的一个映射
+\[
+    x:\mathbb{N}\to\mathbb{R},
+\]
+相当于用自然数编号的一串实数
+\[
+    x_1=x(1),\ x_2=x(2),\ \cdots,\ x_n=x(n),\ \cdots .
+\]
+这样的一个映射，或者说这样的用自然数编号的一串实数 $\{x_n\}$，
+称为一个实数序列。
+
+\subsection*{1.a\quad 有界序列}
+
+\textbf{定义 1}\quad
+设 $\{x_n\}$ 是一个实数序列。
+\begin{enumerate}[label=(\arabic*)]
+  \item 如果存在 $M\in\mathbb{R}$，使得
+  \[
+      x_n\le M,\qquad \forall n\in\mathbb{N},
+  \]
+  我们就说：序列 $\{x_n\}$ 有上界，实数 $M$ 是它的一个上界；
+
+  \item 如果存在 $m\in\mathbb{R}$，使得
+  \[
+      x_n\ge m,\qquad \forall n\in\mathbb{N},
+  \]
+  我们就说：序列 $\{x_n\}$ 有下界，实数 $m$ 是它的一个下界；
+
+  \item 如果序列 $\{x_n\}$ 有上界并且也有下界，我们就说该序列有界。
+\end{enumerate}
+
+序列 $\{x_n\}$ 有界的充要条件是：存在 $K\in\mathbb{R}$，使得
+\[
+    |x_n|\le K,\qquad \forall n\in\mathbb{N}.
+\]
+序列 $\{x_n\}$ 有界这件事，可以用符号表述为
+\[
+    (\exists K\in\mathbb{R})(\forall n\in\mathbb{N})(|x_n|\le K).
+\]
+而“序列 $\{x_n\}$ 无界”是上面陈述的否定，它可以用符号表述为
+\[
+    (\forall K\in\mathbb{R})(\exists n\in\mathbb{N})(|x_n|>K).
+\]
+请注意，当我们对一个陈述加以否定时，应该把逻辑量词“$\exists$”换成“$\forall$”，
+把“$\forall$”换成“$\exists$”，并且把最后的陈述换成原来陈述的否定。
+
+\medskip
+\textbf{例 1}\quad
+序列 $x_n=(-1)^n\ (n=1,2,\cdots)$ 是有界的，因为
+\[
+    |x_n|\le 1,\qquad \forall n\in\mathbb{N}.
+\]
+
+\medskip
+\textbf{例 2}\quad
+序列
+\[
+    x_n=\frac{n+1}{n}\quad (n=1,2,\cdots)
+\]
+是有界的，因为
+\[
+    |x_n|=\left|\frac{n+1}{n}\right|
+    \le \left|\frac{n+n}{n}\right|=2,\qquad \forall n\in\mathbb{N}.
+\]
+
+\medskip
+\textbf{例 3}\quad
+序列
+\[
+    x_n=\left(1+\frac{1}{n}\right)^n\quad (n=1,2,\cdots)
+\]
+是有界的，因为
+\begin{align*}
+0<x_n
+&=1+n\frac{1}{n}
+  +\frac{n(n-1)}{2}\frac{1}{n^2}
+  +\frac{n(n-1)(n-2)}{3!}\frac{1}{n^3} \\
+&\quad+\cdots+
+  \frac{n(n-1)\cdots(n-k+1)}{k!}\frac{1}{n^k}
+  +\cdots+\frac{1}{n^n} \\
+&=1+1+\frac{1}{2!}\left(1-\frac{1}{n}\right)
+  +\frac{1}{3!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\\
+&\quad+\cdots+
+  \frac{1}{k!}\left(1-\frac{1}{n}\right)\cdots
+  \left(1-\frac{k-1}{n}\right) \\
+&\quad+\cdots+
+  \frac{1}{n!}\left(1-\frac{1}{n}\right)\cdots
+  \left(1-\frac{n-1}{n}\right)\\
+&\le 1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{k!}
+  +\cdots+\frac{1}{n!}\\
+&\le 1+1+\frac{1}{2}+\frac{1}{2^2}+\cdots+\frac{1}{2^{k-1}}
+  +\cdots+\frac{1}{2^{n-1}}\\
+&=1+\frac{1-\left(\frac12\right)^n}{1-\frac12}
+  <1+\frac{1}{1-\frac12}=3.
+\end{align*}
+
+\medskip
+\textbf{例 4}\quad
+序列
+\[
+    a_n=n,\qquad b_n=-2n,\qquad c_n=n+(-1)^n n
+\]
+和
+\[
+    d_n=n\cdot\sin\frac{n\pi}{2}
+\]
+都是无界的。
+
+\medskip
+\textbf{例 5}\quad
+考察序列
+\[
+    x_n=1+\frac12+\cdots+\frac1n,\qquad n=1,2,\cdots.
+\]
+我们来证明这序列是无界的。事实上，对任意自然数 $N$，只要取
+$n=2^{2N}$，就有
+\begin{align*}
+x_n
+&=1+\frac12+\left(\frac13+\frac14\right)
+ +\left(\frac15+\frac16+\frac17+\frac18\right)+\cdots\\
+&\quad+\left(\frac{1}{2^{k-1}+1}+\cdots+\frac{1}{2^k}\right)
+ +\cdots+
+ \left(\frac{1}{2^{2N-1}+1}+\cdots+\frac{1}{2^{2N}}\right)\\
+&>1+\frac12+2\frac{1}{2^2}+4\frac{1}{2^3}
+ +\cdots+2^{k-1}\frac{1}{2^k}
+ +\cdots+2^{2N-1}\frac{1}{2^{2N}}\\
+&>\underbrace{\frac12+\frac12+\cdots+\frac12}_{2N\text{项}}
+ =2N\frac12=N.
+\end{align*}
+
+\subsection*{1.b\quad 无穷小序列}
+
+考察序列 $\{\alpha_n\}$，$\{\beta_n\}$ 和 $\{\gamma_n\}$，这里
+\[
+    \alpha_n=\frac1n,\qquad
+    \beta_n=-\frac1n,\qquad
+    \gamma_n=\frac{(-1)^n}{n}.
+\]
+我们看到，随着 $n$ 的增大，$\alpha_n$ 不断减小而趋近于 $0$，
+$\beta_n$ 不断增加而趋近于 $0$，
+$\gamma_n$ 来回摆动但仍然趋近于 $0$。
+这几个序列都是无穷小序列的例子。
+
+\medskip
+\textbf{定义 2}\quad
+设 $\{x_n\}$ 是一个实数序列。如果对任意实数 $\varepsilon>0$，
+都存在自然数 $N$，使得只要 $n>N$，就有
+\[
+    |x_n|<\varepsilon,
+\]
+那么我们就称 $\{x_n\}$ 为无穷小序列。
+
+用符号表示，“$\{x_n\}$ 是无穷小序列”这件事可以写成
+\[
+    (\forall \varepsilon>0)(\exists N\in\mathbb{N})
+    (\forall n>N)(|x_n|<\varepsilon).
+\]
+这就是说：只要我们取 $n$ 足够大，$|x_n|$ 可以小于任何预先指定的正数。
+“序列 $\{y_n\}$ 不是无穷小序列”这件事可以用符号表示成
+\[
+    (\exists \varepsilon>0)(\forall N\in\mathbb{N})
+    (\exists n>N)(|y_n|\ge \varepsilon).
+\]
+
+\medskip
+\textbf{几何解释}\quad
+考察以 $0$ 点为中心的开区间
+\[
+    (-\varepsilon,\varepsilon).
+\]
+我们把该开区间叫作 $0$ 点的 $\varepsilon$ 邻域。
+用几何的语言来描述，“$\{x_n\}$ 是无穷小序列”意味着：
+不论 $0$ 点的邻域怎样小，序列 $\{x_n\}$ 从某一项之后的各项都要进入该邻域之中。
+
+\medskip
+\textbf{例 6}\quad
+\[
+    x_n=\frac{1+(-1)^n}{n}
+\]
+是无穷小序列。事实上，我们有
+\[
+    |x_n|=\left|\frac{1+(-1)^n}{n}\right|\le \frac2n.
+\]
+对任何 $\varepsilon>0$，要使
+\[
+    \frac2n<\varepsilon,
+\]
+只需
+\[
+    n>\frac2\varepsilon.
+\]
+我们可以取大于 $\frac2\varepsilon$ 的任意一个自然数作为 $N$。
+例如可取
+\[
+    N=\left[\frac2\varepsilon\right]+1.
+\]
+对于这样选取的 $N\in\mathbb{N}$，只要 $n>N$，就有
+\[
+    |x_n|\le \frac2n<\varepsilon.
+\]
+
+\medskip
+\textbf{例 7}\quad
+设 $a\in\mathbb{R}$，$|a|>1$，则
+\[
+    s_n=\frac{1}{a^n},\qquad n=1,2,\cdots
+\]
+是无穷小序列。事实上
+\[
+    \left|\frac{1}{a^n}\right|
+    =\frac{1}{|a|^n}
+    =\frac{1}{(1+(|a|-1))^n}
+    <\frac{1}{n(|a|-1)}.
+\]
+要使
+\[
+    \frac{1}{n(|a|-1)}<\varepsilon,
+\]
+只需
+\[
+    n>\frac{1}{\varepsilon(|a|-1)}.
+\]
+我们可以取大于 $\frac{1}{\varepsilon(|a|-1)}$ 的任意自然数作为 $N$，
+例如可取
+\[
+    N=\left[\frac{1}{\varepsilon(|a|-1)}\right]+1.
+\]
+于是，只要 $n>N$，就有
+\[
+    |s_n|=\frac{1}{|a|^n}
+    <\frac{1}{n(|a|-1)}<\varepsilon.
+\]
+
+\medskip
+\textbf{例 8}\quad
+设 $a\in\mathbb{R}$，$|a|>1$，则
+\[
+    t_n=\frac{n}{a^n},\qquad n=1,2,\cdots
+\]
+是无穷小序列。
+
+事实上，对于 $n\ge 2$，我们有
+\begin{align*}
+\left|\frac{n}{a^n}\right|
+&=\frac{n}{|a|^n}
+ =\frac{n}{(1+(|a|-1))^n}\\
+&<\frac{n}{\frac{n(n-1)}{2}(|a|-1)^2}\\
+&=\frac{2}{(n-1)(|a|-1)^2}.
+\end{align*}
+要使
+\[
+    \frac{2}{(n-1)(|a|-1)^2}<\varepsilon,
+\]
+只需
+\[
+    n>\frac{2}{\varepsilon(|a|-1)^2}+1.
+\]
+我们可以取大于 $\frac{2}{\varepsilon(|a|-1)^2}+1$ 的任意自然数作为 $N$，
+例如可取
+\[
+    N=\left[\frac{2}{\varepsilon(|a|-1)^2}\right]+2.
+\]
+对这样选取的 $N\in\mathbb{N}$，只要 $n>N$，就有
+\[
+    |t_n|<\frac{2}{(n-1)(|a|-1)^2}<\varepsilon.
+\]
+
+在上面各例中，我们采取逐步倒推的方式，从任意给定的 $\varepsilon$ 出发，
+寻找无穷小序列定义所要求的 $N$。
+因为只需要指出这样的 $N$ 存在，所以在倒推的过程中，
+允许适当地放宽不等式，以简化我们的讨论。
+这种放宽不等式的办法，可以概括为以下简单的引理：
+
+\medskip
+\textbf{引理}\quad
+设 $\{\alpha_n\}$ 和 $\{\beta_n\}$ 是实数序列，并设存在 $N_0\in\mathbb{N}$，使得
+\[
+    |\alpha_n|\le \beta_n,\qquad \forall n>N_0.
+\]
+如果 $\{\beta_n\}$ 是无穷小序列，那么 $\{\alpha_n\}$ 也是无穷小序列。
+
+\textbf{证明}\quad
+对任意的 $\varepsilon>0$，存在 $N_1\in\mathbb{N}$，使得 $n>N_1$ 时
+$|\beta_n|<\varepsilon$。我们取
+\[
+    N=\max\{N_0,N_1\}.
+\]
+则当 $n>N$ 时，就有
+\[
+    |\alpha_n|\le \beta_n<\varepsilon.
+\]
+\qed
+
+仔细检查上面几个例题，我们发现在证明过程中实际上都用了类似该引理的推理方式。
+在例 7 中，需要判断什么时候
+\[
+    \left|\frac{1}{a^n}\right|<\varepsilon,
+\]
+我们放宽为判断什么时候
+\[
+    \frac{1}{n(|a|-1)}<\varepsilon.
+\]
+在例 8 中，代替不等式
+\[
+    \left|\frac{n}{a^n}\right|<\varepsilon,
+\]
+我们考察较容易的不等式
+\[
+    \frac{2}{(n-1)(|a|-1)^2}<\varepsilon.
+\]
+
+\medskip
+\textbf{例 9}\quad
+考察序列
+\[
+    \alpha_n=\frac{1}{(n+1)^2}+\cdots+\frac{1}{(2n)^2},
+    \qquad n=1,2,\cdots.
+\]
+因为
+\[
+    0\le \alpha_n
+    \le \underbrace{\frac1{n^2}+\cdots+\frac1{n^2}}_{n\text{项}}
+    =\frac1n,
+\]
+所以 $\{\alpha_n\}$ 是无穷小序列。
+
+\subsection*{1.c\quad 有界序列与无穷小序列的性质}
+
+\textbf{引理}\quad
+如果 $\{\alpha_n\}$ 是无穷小序列，那么它也是有界序列。
+
+\textbf{证明}\quad
+对于 $\varepsilon=1$，存在 $N\in\mathbb{N}$，使得只要 $n>N$，就有
+\[
+    |\alpha_n|<1.
+\]
+记
+\[
+    K=\max\{|\alpha_1|,\cdots,|\alpha_N|,1\},
+\]
+则显然有
+\[
+    |\alpha_n|\le K,\qquad \forall n\in\mathbb{N}.
+\]
+\qed
+
+\medskip
+\textbf{定理 1}\quad
+关于有界序列与无穷小序列，有以下结果：
+\begin{enumerate}[label=(\arabic*)]
+  \item 两个有界序列的和与乘积都是有界序列。即如果 $\{x_n\}$、$\{y_n\}$ 都是有界序列，那么
+  \[
+      \{x_n+y_n\}\quad \text{与}\quad \{x_ny_n\}
+  \]
+  都是有界序列。
+
+  \item 两个无穷小序列 $\{\alpha_n\}$ 与 $\{\beta_n\}$ 之和
+  \[
+      \{\alpha_n+\beta_n\}
+  \]
+  也是无穷小序列。
+
+  \item 无穷小序列 $\{\alpha_n\}$ 与有界序列 $\{x_n\}$ 的乘积
+  \[
+      \{\alpha_nx_n\}
+  \]
+  是无穷小序列。
+
+  \item $\{\alpha_n\}$ 是无穷小序列 $\Longleftrightarrow$
+  $\{|\alpha_n|\}$ 是无穷小序列。
+\end{enumerate}
+
+\textbf{证明}\quad
+(1) 我们有
+\[
+    |x_n|\le K,\quad \forall n\in\mathbb{N};
+    \qquad
+    |y_n|\le L,\quad \forall n\in\mathbb{N}.
+\]
+于是
+\[
+    |x_n+y_n|\le |x_n|+|y_n|\le K+L,\qquad \forall n\in\mathbb{N};
+\]
+\[
+    |x_ny_n|=|x_n|\,|y_n|\le KL,\qquad \forall n\in\mathbb{N}.
+\]
+
+(2) 对任意 $\varepsilon>0$，存在 $N_1\in\mathbb{N}$ 和 $N_2\in\mathbb{N}$，
+分别使得
+\[
+    |\alpha_n|<\varepsilon/2,\qquad \forall n>N_1,
+\]
+和
+\[
+    |\beta_n|<\varepsilon/2,\qquad \forall n>N_2.
+\]
+取 $N=\max\{N_1,N_2\}$，则 $n>N$ 时，就有
+\[
+    |\alpha_n+\beta_n|
+    \le |\alpha_n|+|\beta_n|
+    <\frac{\varepsilon}{2}+\frac{\varepsilon}{2}
+    =\varepsilon.
+\]
+
+(3) 根据定义，存在 $K\in\mathbb{R}$ 使得
+\[
+    |x_n|\le K,\qquad \forall n\in\mathbb{N}.
+\]
+不妨设 $K>0$。对任意 $\varepsilon>0$，我们有 $\varepsilon/K>0$。
+因而存在 $N\in\mathbb{N}$，使得 $n>N$ 时，有
+\[
+    |\alpha_n|<\varepsilon/K.
+\]
+这时就有
+\[
+    |\alpha_nx_n|=|\alpha_n|\,|x_n|<\frac{\varepsilon}{K}K=\varepsilon.
+\]
+
+(4) 我们有显然的关系
+\[
+    \bigl||\alpha_n|\bigr|=|\alpha_n|.
+\]
+\qed
+
+\medskip
+\textbf{推论}\quad
+我们有：
+\begin{enumerate}[label=(\arabic*), start=5]
+  \item 两个无穷小序列 $\{\alpha_n\}$ 和 $\{\beta_n\}$ 的乘积
+  $\{\alpha_n\beta_n\}$ 也是无穷小序列；
+
+  \item 实数 $c$ 与无穷小序列 $\{\alpha_n\}$ 的乘积
+  $\{c\alpha_n\}$ 也是无穷小序列；
+
+  \item 有限个无穷小序列之和仍是无穷小序列，有限个无穷小序列之乘积也是无穷小序列。
+\end{enumerate}
+
+\textbf{证明}\quad
+(5) 无穷小序列 $\{\beta_n\}$ 是有界序列。
+
+(6) 常数 $c$ 可以视为有界序列：
+\[
+    x_n=c,\qquad n=1,2,\cdots.
+\]
+
+(7) 利用数学归纳法就可证明。\qed
+
+\medskip
+\textbf{例 10}\quad
+设 $b\in\mathbb{R}$，$b>1$，$k\in\mathbb{N}$，则
+\[
+    x_n=\frac{n^k}{b^n},\qquad n=1,2,\cdots,
+\]
+是无穷小序列。事实上，我们可以记
+\[
+    a=b^{1/k}=\sqrt[k]{b}.
+\]
+于是有
+\[
+    x_n=\left(\frac{n}{a^n}\right)^k.
+\]
+这是 $k$ 个无穷小序列
+\[
+    t_n=\frac{n}{a^n}
+\]
+的乘积，因而也是无穷小序列。
+
+\medskip
+\textbf{例 11}\quad
+设 $c>0$，则
+\[
+    y_n=\frac{c^n}{n!},\qquad n=1,2,\cdots
+\]
+是无穷小序列。为证明这一事实，我们取定一个 $m\in\mathbb{N}$，使得 $m>c$。
+显然有
+\begin{align*}
+\left|\frac{c^n}{n!}\right|
+&=\frac1{m!}\cdot \frac{c^n}{(m+1)\cdots n}\\
+&<\frac1{m!}\cdot \frac{c^n}{m^{n-m}}\\
+&=\frac{m^m}{m!}\left(\frac{c}{m}\right)^n,\qquad \forall n>m.
+\end{align*}
+因为 $c/m<1$，由例 7 可知 $\left\{\left(\frac{c}{m}\right)^n\right\}$
+是无穷小序列，所以 $\{y_n\}$ 也是无穷小序列。
+
+\medskip
+\textbf{例 12}\quad
+设 $\{\alpha_n\}$ 是无穷小序列，记
+\[
+    \beta_n=\frac{\alpha_1+\cdots+\alpha_n}{n},\qquad n=1,2,\cdots,
+\]
+则 $\{\beta_n\}$ 也是无穷小序列。
+换句话说，以无穷小序列前 $n$ 项的算术平均数作为通项的序列，
+也是一个无穷小序列。
+
+\textbf{证明}\quad
+对任意的 $\varepsilon>0$，存在 $m\in\mathbb{N}$，使得只要 $n>m$，就有
+\[
+    |\alpha_n|<\varepsilon/2.
+\]
+对这取定的 $m$，又可取充分大的 $p\in\mathbb{N}$，使得
+\[
+    \frac{|\alpha_1|+\cdots+|\alpha_m|}{p}<\frac{\varepsilon}{2}.
+\]
+记 $N=\max\{m,p\}$，则当 $n>N$ 时，就有
+\begin{align*}
+|\beta_n|
+&\le
+\frac{|\alpha_1|+\cdots+|\alpha_m|}{n}
++\frac{|\alpha_{m+1}|+\cdots+|\alpha_n|}{n}\\
+&\le
+\frac{|\alpha_1|+\cdots+|\alpha_m|}{p}
++\frac{|\alpha_{m+1}|+\cdots+|\alpha_n|}{n-m}\\
+&<\frac{\varepsilon}{2}
++\frac{(n-m)\frac{\varepsilon}{2}}{n-m}
+=\varepsilon.
+\end{align*}
+\qed
+
+\medskip
+\textbf{例 13}\quad
+设 $\{\alpha_n\}$ 是无穷小序列，并且
+\[
+    \alpha_n\ge 0,\qquad \forall n\in\mathbb{N}.
+\]
+我们记
+\[
+    \gamma_n=\sqrt[n]{\alpha_1\alpha_2\cdots\alpha_n},
+    \qquad n=1,2,\cdots,
+\]
+则 $\{\gamma_n\}$ 也是无穷小序列。
+
+\textbf{证明}\quad
+我们有
+\[
+    0\le \gamma_n\le \beta_n,\qquad \forall n\in\mathbb{N},
+\]
+这里
+\[
+    \beta_n=\frac{\alpha_1+\cdots+\alpha_n}{n},\qquad n=1,2,\cdots,
+\]
+是无穷小序列（见例 12）。\qed
+
+\medskip
+\textbf{例 14}\quad
+考察序列
+\[
+    z_n=\sqrt[n]{\frac{1}{n!}},\qquad n=1,2,\cdots.
+\]
+因为
+\[
+    \alpha_n=\frac1n,\qquad n=1,2,\cdots,
+\]
+是无穷小序列，引用例 13 就可断定 $\{z_n\}$ 也是一个无穷小序列。
+
+在结束本节之前，我们对无穷小序列定义中的 $\varepsilon$ 再说几句话。
+这定义中的 $\varepsilon$ 是可以任意选取的正数。
+我们用任意选取的 $\varepsilon>0$ 来检验序列 $\{u_n\}$，
+观察是否存在 $N\in\mathbb{N}$，能使得
+\[
+    n>N\Rightarrow |u_n|<\varepsilon.
+\]
+其实，如果 $\varepsilon$ 是可以任意选取的正数，
+那么 $2\varepsilon$ 也是可以任意选取的正数。
+对任意的 $\varepsilon'>0$，我们总可以选取
+$\varepsilon=\varepsilon'/2$，使得 $2\varepsilon=\varepsilon'$。
+更一般地，对于取定的 $K>0$，如果 $\varepsilon$ 是可以任意选取的正数，
+那么 $K\varepsilon$ 也是可以任意选取的正数。
+因此，在有关无穷小序列的讨论中，对所涉及的 $\varepsilon$，
+可以不必过分拘泥。例如，对于定理 1 中的 (2)，(3) 两项，
+可以按以下方式书写证明（实质上当然没有任何改变，但用这种方式写起来更为顺手）：
+
+(2) 对任何 $\varepsilon>0$，存在 $N_1\in\mathbb{N}$ 和 $N_2\in\mathbb{N}$，
+分别使得
+\[
+    n>N_1\Rightarrow |\alpha_n|<\varepsilon
+\]
+和
+\[
+    n>N_2\Rightarrow |\beta_n|<\varepsilon.
+\]
+取 $N=\max\{N_1,N_2\}$，则对 $n>N$，就有
+\[
+    |\alpha_n+\beta_n|\le |\alpha_n|+|\beta_n|<2\varepsilon.
+\]
+
+(3) 设 $K>0$，使得
+\[
+    |x_n|\le K,\qquad \forall n\in\mathbb{N}.
+\]
+对任何 $\varepsilon>0$，存在 $N\in\mathbb{N}$，使得
+\[
+    n>N\Rightarrow |\alpha_n|<\varepsilon.
+\]
+于是，只要 $n>N$，就有
+\[
+    |\alpha_nx_n|=|\alpha_n|\,|x_n|<K\varepsilon.
+\]
+
+\ifx\allfiles\undefined %若没定义主文件
+\end{document}% 就打印这个结尾
+\fi
